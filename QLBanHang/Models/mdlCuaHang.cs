@@ -32,6 +32,7 @@ namespace QLBanHang.Models
             return table;
         }
 
+<<<<<<< HEAD
         public DataTable GetTenCuaHang()
         {
             DataTable table = new DataTable();//Create template table to get data from database
@@ -49,6 +50,9 @@ namespace QLBanHang.Models
         }
 
         public int GetIdCuaHangByCode(string maCuaHang)
+=======
+        public int GetIdCuaHang(string maCuaHang)
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("select id from tbCuaHang where tbCuaHang.MaCuaHang = '{0}'", maCuaHang);
@@ -58,6 +62,7 @@ namespace QLBanHang.Models
             else return 0;
         }
 
+<<<<<<< HEAD
         public int GetIdCuaHangByTen(string tenCuaHang)
         {
             DataTable table = new DataTable();//Create template table to get data from database
@@ -68,6 +73,8 @@ namespace QLBanHang.Models
             else return 0;
         }
 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public bool AddData(clsCuaHang cuaHang)
         {
             _conn.CMD.CommandText = String.Format("INSERT [dbo].[tbCuaHang] (TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai,TenCuaHangTrenBill"

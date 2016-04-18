@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
+=======
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             this.heThongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thayDoiMatKhauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +47,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.khachHangNhaCungCapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thuChiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tbPageBanHang = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -119,6 +124,21 @@
             this.menuStripMain.Size = new System.Drawing.Size(1129, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
+=======
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.heThongToolStripMenuItem,
+            this.quanLyToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1397, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             // 
             // heThongToolStripMenuItem
             // 
@@ -220,6 +240,7 @@
             this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.thuChiToolStripMenuItem.Text = "Thu Chi";
             // 
+<<<<<<< HEAD
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tbPageBanHang);
@@ -703,10 +724,13 @@
             this.tSbtnMinusMaVach.Text = "-1";
             this.tSbtnMinusMaVach.Click += new System.EventHandler(this.tSbtnMinusMaVach_Click);
             // 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1129, 682);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tabControlMain);
@@ -741,6 +765,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachDaChon)).EndInit();
             this.tSMaVachDaChon.ResumeLayout(false);
             this.tSMaVachDaChon.PerformLayout();
+=======
+            this.ClientSize = new System.Drawing.Size(1397, 751);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainForm";
+            this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -748,7 +782,11 @@
 
         #endregion
 
+<<<<<<< HEAD
         private System.Windows.Forms.MenuStrip menuStripMain;
+=======
+        private System.Windows.Forms.MenuStrip menuStrip1;
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         private System.Windows.Forms.ToolStripMenuItem heThongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thayDoiMatKhauToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
@@ -763,6 +801,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem khachHangNhaCungCapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thuChiToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tbPageBanHang;
         private System.Windows.Forms.TabPage tbPageDatHang;
@@ -808,5 +847,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripComboBox tSCmbCuaHang;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     }
 }

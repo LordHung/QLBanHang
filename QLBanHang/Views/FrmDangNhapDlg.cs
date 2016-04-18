@@ -18,6 +18,7 @@ namespace QLBanHang.Views
 
         ctrlNhanVien _ctrlNhanVien = new ctrlNhanVien();
 
+<<<<<<< HEAD
         private bool _isLoggedIn = false;
 
         public bool IsLoggedIn
@@ -26,6 +27,8 @@ namespace QLBanHang.Views
             set { _isLoggedIn = value; }
         }
 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public FrmDangNhapDlg()
         {
             InitializeComponent();
@@ -34,8 +37,13 @@ namespace QLBanHang.Views
 
         public string TenDangNhap
         {
+<<<<<<< HEAD
             get { return txtTenDangNhap.Text; }
             set { txtTenDangNhap.Text = value; }
+=======
+            get { return txtDangNhap.Text; }
+            set { txtDangNhap.Text = value; }
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         }
 
 
@@ -45,6 +53,7 @@ namespace QLBanHang.Views
             set { txtMatKhau.Text = value; }
         }
 
+<<<<<<< HEAD
 
         private bool LogInSuccessful()
         {
@@ -79,16 +88,21 @@ namespace QLBanHang.Views
 
         }
 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+<<<<<<< HEAD
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             DangNhap();
         }
 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
        
     }
 }

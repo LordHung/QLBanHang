@@ -10,12 +10,16 @@ using System.Windows.Forms;
 using QLBanHang.Controls;
 using QLBanHang.Objects;
 using QLBanHang.Views;
+<<<<<<< HEAD
 using System.Collections;
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
 
 namespace QLBanHang.Views
 {
     public partial class MainForm : Form
     {
+<<<<<<< HEAD
         /// 
         /// Dùng để quản lý nhân viên đăng nhập
         /// 
@@ -75,6 +79,22 @@ namespace QLBanHang.Views
         ctrlChiTietHoaDon _ctrlChiTietHoaDon = new ctrlChiTietHoaDon();
 
         clsChiTietHoaDon _chiTietHoaDon = new clsChiTietHoaDon();
+=======
+        ctrlNhanVien _ctrlNhanVien = new ctrlNhanVien();
+
+        clsNhanVien _nhanVien = new clsNhanVien();
+
+        FormQuanLyBanHang _FrmQLBH = new FormQuanLyBanHang();
+
+        FrmCuaHang _FrmCuaHang = new FrmCuaHang();
+
+        FormQLKH_NCC _FrmQLKH_NCC = new FormQLKH_NCC();
+
+        /// <summary>
+        /// Kiểm tra xem đã đăng nhập chưa
+        /// </summary>
+        private bool _isDangNhap = false;
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
 
         public MainForm()
         {
@@ -83,6 +103,7 @@ namespace QLBanHang.Views
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             LoadControlBanHang();
             LoadMaVachSanPham();   
             initMaVachDuocChonDT();
@@ -206,6 +227,41 @@ namespace QLBanHang.Views
 
 
         #region ToolMenuStripItem Click
+=======
+            while(!_isDangNhap)
+            {
+                using (FrmDangNhapDlg dlg = new FrmDangNhapDlg())
+                {
+                    if (dlg.ShowDialog() == DialogResult.OK && DangNhap(dlg))
+                    {
+                        _nhanVien.TenDangNhap = dlg.TenDangNhap;
+                        _isDangNhap = true;
+                        MainForm_Load(sender, e);
+                        _nhanVien.TenDangNhap = dlg.TenDangNhap;
+                        _nhanVien.Id = _ctrlNhanVien.GetIdNhanVien(dlg.TenDangNhap);
+                    }
+                    else
+                        MessageBox.Show("ko thể đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private bool DangNhap(FrmDangNhapDlg dlg)
+        {
+            string _tenDangNhap = dlg.TenDangNhap;
+            if (_ctrlNhanVien.IsExist(_tenDangNhap))
+            {
+               string  _matKhau = _ctrlNhanVien.GetMatKhauNhanVien(_tenDangNhap);
+                if (_matKhau == dlg.MatKhau)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         private void sanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _FrmQLBH = new FormQuanLyBanHang();
@@ -231,6 +287,7 @@ namespace QLBanHang.Views
 
         private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             MainForm_Load(sender, e);
         }
         #endregion
@@ -477,5 +534,10 @@ namespace QLBanHang.Views
         }
 
         
+=======
+            _isDangNhap = false;
+            MainForm_Load(sender, e);
+        }
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     }
 }

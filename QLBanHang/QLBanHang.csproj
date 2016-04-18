@@ -44,19 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Controls\ctrlChiTietHoaDon.cs" />
     <Compile Include="Controls\ctrlCuaHang.cs" />
     <Compile Include="Controls\ctrlHoaDon.cs" />
+=======
+    <Compile Include="Controls\ctrlCuaHang.cs" />
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     <Compile Include="Controls\ctrlKeyPress.cs" />
     <Compile Include="Controls\ctrlKhachHang.cs" />
     <Compile Include="Controls\ctrlLoaiKhachHang.cs" />
     <Compile Include="Controls\ctrlLoaiSanPham.cs" />
+<<<<<<< HEAD
     <Compile Include="Controls\ctrlMaVachSanPham.cs" />
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     <Compile Include="Controls\ctrlNganhSanPham.cs" />
     <Compile Include="Controls\ctrlNhaCungCap.cs" />
     <Compile Include="Controls\ctrlNhanVien.cs" />
     <Compile Include="Controls\ctrlNhaSanXuat.cs" />
     <Compile Include="Controls\ctrlSanPham.cs" />
+<<<<<<< HEAD
     <Compile Include="Controls\ctrlSanPhamCuaHang.cs" />
     <Compile Include="Models\mdlChiTietHoaDon.cs" />
     <Compile Include="Models\mdlHoaDon.cs" />
@@ -68,6 +76,11 @@
     <Compile Include="Models\mdlKhachHang.cs" />
     <Compile Include="Models\mdlLoaiKhachHang.cs" />
     <Compile Include="Models\mdlMaVachSanPham.cs" />
+=======
+    <Compile Include="Models\mdlCuaHang.cs" />
+    <Compile Include="Models\mdlKhachHang.cs" />
+    <Compile Include="Models\mdlLoaiKhachHang.cs" />
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     <Compile Include="Models\mdlNhanVien.cs" />
     <Compile Include="Models\mdlSanPham.cs" />
     <Compile Include="Models\ConnectToSQL.cs" />
@@ -79,7 +92,10 @@
     <Compile Include="Objects\clsKhachHang.cs" />
     <Compile Include="Objects\clsLoaiKhachHang.cs" />
     <Compile Include="Objects\clsLoaiSanPham.cs" />
+<<<<<<< HEAD
     <Compile Include="Objects\clsMaVachSanPham.cs" />
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     <Compile Include="Objects\clsNganhSanPham.cs" />
     <Compile Include="Objects\clsNhanVien.cs" />
     <Compile Include="Objects\clsNhaSanXuat.cs" />
@@ -275,6 +291,7 @@
   <ItemGroup>
     <None Include="images\login_key.png" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="images\dautich.png" />
   </ItemGroup>
@@ -284,6 +301,8 @@
   <ItemGroup>
     <None Include="images\dautru.png" />
   </ItemGroup>
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

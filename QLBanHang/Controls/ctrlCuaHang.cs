@@ -19,6 +19,7 @@ namespace QLBanHang.Controls
             return _mdlCuaHang.GetData();
         }
 
+<<<<<<< HEAD
         public DataTable GetTenCuaHang()
         {
             return _mdlCuaHang.GetTenCuaHang();
@@ -29,11 +30,14 @@ namespace QLBanHang.Controls
             return _mdlCuaHang.GetIdCuaHang();
         }
 
+=======
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public DataTable GetCuaHangByCode(string maCuaHang)
         {
             return _mdlCuaHang.GetCuaHangByCode(maCuaHang);
         }
 
+<<<<<<< HEAD
         public int GetIdCuaHangByCode(string maCuaHang)
         {
             return _mdlCuaHang.GetIdCuaHangByCode(maCuaHang);
@@ -42,6 +46,11 @@ namespace QLBanHang.Controls
         public int GetIdCuaHangByTen(string tenCuaHang)
         {
             return _mdlCuaHang.GetIdCuaHangByTen(tenCuaHang);
+=======
+        public int GetIdCuaHang(string maCuaHang)
+        {
+            return _mdlCuaHang.GetIdCuaHang(maCuaHang);
+>>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         }
 
         public bool AddData(clsCuaHang cuaHang)
