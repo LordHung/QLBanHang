@@ -32,5 +32,11 @@ namespace QLBanHang.Controls
         {
             return _mdlMaVachSanPham.GiamSoLuong(id,soLuong);
         }
+
+
+        public int GetGiaVonBanLe(int id, int soLuong)
+        {
+            return _mdlMaVachSanPham.GetGiaVonBanLe(id, soLuong);
+        }
     }
 }

@@ -39,14 +39,7 @@ namespace QLBanHang.Views
         private void AddData()
         {
             AssignData();
-            if (!_ctrlNhaCungCap.IsExist(_nhaCungCap.CodeNhaCungCap))
-            {
-                if (_ctrlNhaCungCap.AddData(_nhaCungCap))
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else MessageBox.Show("Thêm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-                MessageBox.Show("Đã có nhà cung cấp trong databse ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _ctrlNhaCungCap.AddData(_nhaCungCap);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

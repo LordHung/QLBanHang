@@ -30,11 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-=======
-            this.txtDangNhap = new System.Windows.Forms.TextBox();
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
@@ -60,21 +56,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật Khẩu :";
             // 
-<<<<<<< HEAD
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(375, 56);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(260, 20);
             this.txtTenDangNhap.TabIndex = 2;
-=======
-            // txtDangNhap
-            // 
-            this.txtDangNhap.Location = new System.Drawing.Point(375, 56);
-            this.txtDangNhap.Name = "txtDangNhap";
-            this.txtDangNhap.Size = new System.Drawing.Size(260, 20);
-            this.txtDangNhap.TabIndex = 2;
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             // 
             // txtMatKhau
             // 
@@ -102,10 +89,7 @@
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             // 
             // btnExit
             // 
@@ -120,7 +104,6 @@
             // 
             // FrmDangNhapDlg
             // 
-            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
@@ -129,11 +112,7 @@
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtMatKhau);
-<<<<<<< HEAD
             this.Controls.Add(this.txtTenDangNhap);
-=======
-            this.Controls.Add(this.txtDangNhap);
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -151,11 +130,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtTenDangNhap;
-=======
-        private System.Windows.Forms.TextBox txtDangNhap;
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDangNhap;

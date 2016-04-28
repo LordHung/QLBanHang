@@ -12,8 +12,6 @@ C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\Q
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FormQLKH_NCC.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddNganhSanPhamDlg.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateNganhSanPhamDlg.resources
-C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddNhomHangDlg.resources
-C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateNhomHangDlg.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddSanPhamDlg.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateSanPhamDlg.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.MainForm.resources
@@ -24,3 +22,10 @@ C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\Q
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmCuaHang.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddCuaHangDlg.resources
 C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateCuaHangDlg.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.HoaDonPrinter.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmThongKeHoaDon.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmBanHang.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddLoaiSanPhamDlg.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateLoaiSanPhamDlg.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmDatHang.resources
+C:\Users\L\documents\visual studio 2013\Projects\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmNhapKho.resources

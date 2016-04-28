@@ -34,7 +34,6 @@ namespace QLBanHang.Models
             else return 0;
         }
 
-<<<<<<< HEAD
         public string GetTenNhaVienById(int id)
         {
             DataTable table = new DataTable();//Create template table to get data from database
@@ -45,8 +44,6 @@ namespace QLBanHang.Models
             else return null;
         }
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public string GetMatKhauNhanVien(string tenDangNhap)
         {
             DataTable table = new DataTable();//Create template table to get data from database

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace QLBanHang.Objects
 {
-    class clsHoaDon
+    public class clsHoaDon
     {
+        public clsHoaDon()
+        { }
         /// <summary>
         /// identity primary key
         /// </summary>

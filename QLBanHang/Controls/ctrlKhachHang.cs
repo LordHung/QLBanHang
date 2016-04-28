@@ -13,28 +13,22 @@ namespace QLBanHang.Controls
     class ctrlKhachHang
     {
         mdlKhachHang _mdlKhacHang = new mdlKhachHang();
-<<<<<<< HEAD
 
         public DataTable GetTenKhachHang()
         {
             return _mdlKhacHang.GetTenKhachHang();
         }
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public DataTable GetData()
         {
             return _mdlKhacHang.GetData();
         }
-<<<<<<< HEAD
 
         public DataTable GetIdKhachHang()
         {
             return _mdlKhacHang.GetIdKhachHang();
         }
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public DataTable GetKhachHangByCode(string maKhachHang)
         {
             return _mdlKhacHang.GetKhachHangByCode(maKhachHang);
@@ -44,7 +38,6 @@ namespace QLBanHang.Controls
         {
             return _mdlKhacHang.AddData(khachHang);
         }
-<<<<<<< HEAD
 
         public DataTable GetKhachHang()
         {
@@ -52,7 +45,5 @@ namespace QLBanHang.Controls
         }
 
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
     }
 }

@@ -13,18 +13,14 @@ using QLBanHang.Views;
 
 namespace QLBanHang
 {
-    public partial class FormQuanLyBanHang : Form
+    public partial class FormQuanLyBanHang : Form,INhaSanXuatView,INganhSanPhamView,ISanPhamView,ILoaiSanPhamView
     {
-        /// <summary>
-        /// NhaCungCap controller
-        /// </summary>
-        private ctrlNhaCungCap _ctrlNhaCungCap = new ctrlNhaCungCap();
 
         /// <summary>
         /// NhaSanXuat controller
         /// </summary>
         private ctrlNhaSanXuat _ctrlNhaSanXuat = new ctrlNhaSanXuat();
-        
+       
         /// <summary>
         /// ctrlNganhSanPham
         /// </summary>
@@ -73,6 +69,10 @@ namespace QLBanHang
         {
             InitializeComponent();
             dgView.ContextMenuStrip = contextMenuStrip1;
+            _ctrlNhaSanXuat.SetView(this);
+            _ctrlNganhSanPham.SetView(this);
+            _ctrlLoaiSanPham.SetView(this);
+            _ctrlSanPham.SetView(this);
         }
 
         /// <summary>
@@ -83,64 +83,40 @@ namespace QLBanHang
             switch (_displayFlag)
             {
                 case DisplayFlag.NganhHang:
-                    AddNganhSanPham(sender, e);
+                    AddNganhSanPham();
                     break;
                 case DisplayFlag.NhaSanXuat:
-                    AddNhaSanXuat(sender, e);
+                    AddNhaSanXuat();
                     break;
                 case DisplayFlag.NhomHang:
-                    AddNhomHang(sender, e);
+                    AddLoaiSanPham();
                     break;
                 case DisplayFlag.SanPham:
-                    AddSanPham(sender, e);
+                    AddSanPham();
                     break;
                 default:
                     break;
             }
         }
 
-        private void AddNhaSanXuat(object sender,EventArgs e)
+        public void AddNhaSanXuat()
         {
-            using (AddNhaSanXuatDlg dlg = new AddNhaSanXuatDlg())
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlNhaSanXuat.AddNhaSanXuatFromView();
         }
 
-        private void AddNganhSanPham(object sender, EventArgs e)
+        public void AddNganhSanPham()
         {
-            using (AddNganhSanPhamDlg dlg = new AddNganhSanPhamDlg())
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlNganhSanPham.AddNganhSanPhamFromView();
         }
 
-        private void AddNhomHang(object sender, EventArgs e)
+        public void AddLoaiSanPham()
         {
-            using (AddNhomHangDlg dlg = new AddNhomHangDlg())
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlLoaiSanPham.AddLoaiSanPhamFromView();
         }
 
-        private void AddSanPham(object sender, EventArgs e)
+        public void AddSanPham()
         {
-            using (AddSanPhamDlg dlg = new AddSanPhamDlg())
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlSanPham.AddSanPhamFromView();
         }
 
       
@@ -154,64 +130,40 @@ namespace QLBanHang
             switch (_displayFlag)
             {
                 case DisplayFlag.NganhHang:
-                    UpdateNganhSanPham(sender, e);
+                    UpdateNganhSanPham();
                     break;
                 case DisplayFlag.NhaSanXuat:
-                    UpdateNhaSanXuat(sender, e);
+                    UpdateNhaSanXuat();
                     break;
                 case DisplayFlag.NhomHang:
-                    UpdateNhomHang(sender, e);
+                    UpdateLoaiSanPham();
                     break;
                 case DisplayFlag.SanPham:
-                    UpdateSanPham(sender, e);
+                    UpdateSanPham();
                     break;
                 default:
                     break;
             }
         }
 
-        private void UpdateNhaSanXuat(object sender, EventArgs e)
+        public void UpdateNhaSanXuat()
         {
-            using (UpdateNhaSanXuatDlg dlg = new UpdateNhaSanXuatDlg(_codeForUpdateDelete))
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlNhaSanXuat.UpdateNhaSanXuatFromView(_codeForUpdateDelete);
         }
 
-        private void UpdateNganhSanPham(object sender, EventArgs e)
+        public void UpdateNganhSanPham()
         {
-            using (UpdateNganhSanPhamDlg dlg = new UpdateNganhSanPhamDlg(_codeForUpdateDelete))
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlNganhSanPham.UpdateNganhSanPhamFromView(_codeForUpdateDelete);
         }
 
-        private void UpdateNhomHang(object sender, EventArgs e)
+        public void UpdateLoaiSanPham()
         {
-            using (UpdateNhomHangDlg dlg = new UpdateNhomHangDlg(_codeForUpdateDelete))
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlLoaiSanPham.UpdateLoaiSanPhamFromView(_codeForUpdateDelete);
         }
 
-        private void UpdateSanPham(object sender, EventArgs e)
+        public void UpdateSanPham()
         {
-            using (UpdateSanPhamDlg dlg = new UpdateSanPhamDlg(_codeForUpdateDelete))
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    FrmQuanLySanPham_Load(sender, e);
-                }
-            }
+            _ctrlSanPham.UpdateSanPhamFromView(_codeForUpdateDelete);
         }
 
         /// <summary>
@@ -219,25 +171,47 @@ namespace QLBanHang
         /// </summary>
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, "Bạn có chắc chắn muốn xóa?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                if (_ctrlNhaSanXuat.DeleteData(_codeForUpdateDelete))
-                    MessageBox.Show(this, "Xóa thành công", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else MessageBox.Show(this, "Xóa thất bại", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            FrmQuanLySanPham_Load(sender, e);
+            deleteData();
         }
 
+        public void DeleteNhaSanXuat()
+        {
+            _ctrlNhaSanXuat.DeleteNhaSanXuatFromView(_codeForUpdateDelete);
+        }
 
-        private bool deleteData()
+        public void DeleteNganhSanPham()
+        {
+            _ctrlNganhSanPham.DeleteNganhSanPhamFromView(_codeForUpdateDelete);
+        }
+
+        public void DeleteLoaiSanPham()
+        {
+            _ctrlLoaiSanPham.DeleteLoaiSanPhamFromView(_codeForUpdateDelete);
+        }
+
+        public void DeleteSanPham()
+        {
+            _ctrlSanPham.DeleteSanPhamFromView(_codeForUpdateDelete);
+        }
+
+        public void deleteData()
         {
             switch (_displayFlag)
             {
                 case DisplayFlag.NhaSanXuat:
-                    return _ctrlNhaSanXuat.DeleteData(_codeForUpdateDelete);
+                    DeleteNhaSanXuat();
+                    break;
+                case DisplayFlag.NganhHang:
+                    DeleteNganhSanPham();
+                    break;
+                case DisplayFlag.NhomHang:
+                    DeleteLoaiSanPham();
+                    break;
+                case DisplayFlag.SanPham:
+                    DeleteSanPham();
+                    break;
                 default:
-                    return false;
+                    break;
             }
         }
 
@@ -261,37 +235,48 @@ namespace QLBanHang
                     LoadSanPhamDB();
                     break;
                 default:
-                    dgView.DataSource = _ctrlNhaCungCap.GetData();
                     break;
             }
-
+            ResetColorButtons();
             dgView.DataSource = _dataTable;
-            //LoadSTT();
         }
-
-        /// <summary>
-        /// Thêm cột STT vào đầu datagridview 
-        /// </summary>
-        //private void LoadSTT()
-        //{
-        //    _dataTable.Columns.Add("STT");
-        //    //for (int i = 0; i < _dataTable.Rows.Count; i++)
-        //    //    _dataTable.Rows[i]["STT"] = i + 1;
-          
-        //    dgView.Columns["STT"].DisplayIndex = 0;
-        //    dgView.Columns["STT"].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-        //}
-
-        //private void dgView_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        //{
-        //    dgView.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
-        //}
-
 
         /// <summary>
         /// Button Click events,dùng để load dữ liệu
         /// </summary>
+        /// 
+        private void ResetColorButtons()
+        {
+            btnNhaSanXuat.BackColor = Color.LightCyan;
+
+            btnNganhHang.BackColor = Color.LightCyan;
+
+            btnNhomHang.BackColor = Color.LightCyan;
+
+            btnSanPham.BackColor = Color.LightCyan;
+
+            btnDanhMuc.BackColor = Color.LightCyan;
+
+            btnInMaVach.BackColor = Color.LightCyan; 
+
+            switch (_displayFlag)
+            {
+                case DisplayFlag.NhaSanXuat:
+                    btnNhaSanXuat.BackColor = Color.Cyan;
+                    break;
+                case DisplayFlag.NganhHang:
+                    btnNganhHang.BackColor = Color.Cyan;
+                    break;
+                case DisplayFlag.NhomHang:
+                    btnNhomHang.BackColor = Color.Cyan; 
+                    break;
+                case DisplayFlag.SanPham:
+                    btnSanPham.BackColor = Color.Cyan; 
+                    break;
+            }
+        }
+
+
         private void btnNhaSanXuat_Click(object sender, EventArgs e)
         {
             _displayFlag = DisplayFlag.NhaSanXuat;
@@ -328,6 +313,26 @@ namespace QLBanHang
             FrmQuanLySanPham_Load(sender, e);
         }
 
+        ///
+        /// UpdateView
+        ///   
+        public void  UpdateViewNhaSanXuat()
+        {
+            dgView.DataSource = _ctrlNhaSanXuat.GetData();
+        }
+        public void UpdateViewNganhSanPham()
+        {
+            dgView.DataSource = _ctrlNganhSanPham.GetData();
+        }
+        public void UpdateViewSanPham()
+        {
+            dgView.DataSource = _ctrlSanPham.GetData();
+        }
+
+        public void UpdateViewLoaiSanPham()
+        {
+            dgView.DataSource = _ctrlLoaiSanPham.GetData();
+        }
         /// <summary>
         /// Load Data
         /// </summary>
@@ -364,7 +369,7 @@ namespace QLBanHang
         /// </summary>
         private void dgView_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
             {
                 var hti = dgView.HitTest(e.X, e.Y);
                 if (hti.RowIndex >= 0)
@@ -377,6 +382,7 @@ namespace QLBanHang
                         dgView.CurrentCell = dgView.Rows[hti.RowIndex].Cells[0];
                 }
             }
+            
             _codeForUpdateDelete = dgView.CurrentCell.Value.ToString();
         }
         /// <summary>
@@ -388,6 +394,19 @@ namespace QLBanHang
           
         }
 
-    
+        private void tSBtnThem_Click(object sender, EventArgs e)
+        {
+            addToolStripMenuItem.PerformClick();
+        }
+
+        private void tsBtnXoa_Click(object sender, EventArgs e)
+        {
+            deleteToolStripMenuItem.PerformClick();
+        }
+
+        private void tsBtnSua_Click(object sender, EventArgs e)
+        {
+            updateToolStripMenuItem.PerformClick();
+        }
     }
 }

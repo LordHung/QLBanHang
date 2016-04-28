@@ -17,11 +17,10 @@ namespace QLBanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-<<<<<<< HEAD
-=======
-            //Application.Run(new FrmCuaHang());
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
+            Application.Run(new FrmDatHang());
+            //Application.Run(new FrmNhapKho());
+            //Application.Run(new MainForm());
+
         }
     }
 }

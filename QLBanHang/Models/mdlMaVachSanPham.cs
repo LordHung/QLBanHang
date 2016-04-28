@@ -39,8 +39,8 @@ namespace QLBanHang.Models
         public DataTable GetRowMaVachSanPham(string maVach)
         {
             DataTable table = new DataTable();//Create template table to get data from database
-            _conn.CMD.CommandText = String.Format("SELECT dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
-                                        + ",tbSanPham.TenSanPham,tbSanPham.DonVi,tbMaVachSanPham.SoLuong,tbMaVachSanPham.GiaBan,tbMaVachSanPham.VAT "
+            _conn.CMD.CommandText = String.Format("SELECT tbMaVachSanPham.id,dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
+                                        + ",tbSanPham.TenSanPham,tbSanPham.DonVi,tbMaVachSanPham.SoLuong,tbMaVachSanPham.GiaBan,tbMaVachSanPham.GiaNhap,tbMaVachSanPham.VAT "
                                         +"from tbNhaSanXuat,tbSanPham,tbLoaiSanPham,tbNganhSanPham,tbMaVachSanPham,tbSanPhamCuaHang,tbNhaCungCap "
                                         +"where tbNhaSanXuat.id = tbSanPham.idNhaSanXuat and tbLoaiSanPham.id = tbSanPham.idLoaiSanPham and tbLoaiSanPham.idNganhSanPham = tbNganhSanPham.id "
 	                                    +"and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham and tbSanPhamCuaHang.idCuaHang = '9' "
@@ -60,6 +60,19 @@ namespace QLBanHang.Models
             return _conn.ExecuteCMD();
         }
 
+        /// <summary>
+        /// Bán lẽ 
+        /// </summary>
+
+        public int GetGiaVonBanLe(int id,int soLuong)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format("select  {0}*Round(GiaNhap,-2) as GN from  tbMaVachSanPham " +
+               "where id = '{1}'"
+               , soLuong,id);
+            _conn.FillData(table);
+            return Convert.ToInt32(table.Rows[0]["GN"].ToString());
+        }
         //public int GetIdByMaSanPham(string maSanPham)
         //{
         //    DataTable table = new DataTable();//Create template table to get data from database

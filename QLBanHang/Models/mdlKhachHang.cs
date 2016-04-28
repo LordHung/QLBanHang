@@ -15,7 +15,6 @@ namespace QLBanHang.Models
     {
         ConnectToSQL _conn = new ConnectToSQL();//Initialize connectoSQl class
 
-<<<<<<< HEAD
         /// <summary>
         /// Lấy ra tên khách hàng
         /// </summary>
@@ -54,9 +53,6 @@ namespace QLBanHang.Models
         /// Lấy hết dữ liệu về khách hàng
         /// </summary>
         /// <returns></returns>
-=======
-
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public DataTable GetData()
         {
             DataTable table = new DataTable();//Create template table to get data from database
@@ -67,13 +63,9 @@ namespace QLBanHang.Models
             _conn.FillData(table);
             return table;
         }
-<<<<<<< HEAD
         /// <summary>
         /// Trả về khách hàng theo mã khách hàng
         /// </summary>
-=======
-
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public DataTable GetKhachHangByCode(string maKhachHang)
         {
 
@@ -82,13 +74,9 @@ namespace QLBanHang.Models
             _conn.FillData(table);
             return table;
         }
-<<<<<<< HEAD
         /// <summary>
         /// Thêm khách hàng,CẦN SỬA DỔI DỮ LIỆU LIÊN QUAN ĐẾN IDCUAHANG
         /// </summary>
-=======
-
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public bool AddData(clsKhachHang khachHang)
         {
             _conn.CMD.CommandText = String.Format("INSERT [dbo].[tbKhachHang] "

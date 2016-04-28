@@ -23,6 +23,16 @@ namespace QLBanHang.Models
             return table;
         }
 
+        public DataTable GetNhaCungCap()
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = "select id,CodeNhaCungCap + '/' + TenNhaCungCap as NhaCungCap from tbNhaCungCap";
+            _conn.FillData(table);
+            return table;
+        }
+
+
+
         public DataTable GetNhaCungCapByCode(string maNhaCungCap)
         {
 
@@ -52,6 +62,11 @@ namespace QLBanHang.Models
             else return false;
         }
 
+        public bool DeleteData(string maNhaCungCap)
+        {
+            _conn.CMD.CommandText = "delete tbNhaCungCap where CodeNhaCungCap = '" + maNhaCungCap + "'";
+            return _conn.ExecuteCMD();
+        }
 
         public bool UpdateData(clsNhaCungCap nhaCungCap)
         {

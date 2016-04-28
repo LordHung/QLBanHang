@@ -27,19 +27,8 @@ namespace QLBanHang.Views
         {
             string maNganhSanPham = txtMaNganh.Text.Trim();
             ///Kiểm tra nhasanxuat đã có trong databse chưa?
-            if (!_ctrlNganhSanPham.IsExist(maNganhSanPham))
-            {
-                AssignData();
-                if (_ctrlNganhSanPham.AddData(_nganhSanPham))
-                {
-                    MessageBox.Show(this, "Thêm thành công", "Thêm ngành sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                    MessageBox.Show(this, "Thêm thất bại", "Thêm ngành sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-                MessageBox.Show(this, "Đã có trong databse ", "Thêm ngành sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            AssignData();
+           _ctrlNganhSanPham.AddData(_nganhSanPham);
         }
 
         private void AssignData()

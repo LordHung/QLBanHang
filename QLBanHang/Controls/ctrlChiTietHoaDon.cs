@@ -13,9 +13,12 @@ namespace QLBanHang.Controls
     class ctrlChiTietHoaDon
     {
         mdlChiTietHoaDon _mdlChiTietHoaDon = new mdlChiTietHoaDon();
-        public bool AddData(clsChiTietHoaDon chiTietHoaDon)
+
+        public void AddData(clsChiTietHoaDon chiTietHoaDon)
         {
-            return _mdlChiTietHoaDon.AddData(chiTietHoaDon);
+            if (!_mdlChiTietHoaDon.AddData(chiTietHoaDon))
+            
+                MessageBox.Show( "Thêm chi tiết hóa đơn lỗi", "Thêm chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -66,12 +66,8 @@ namespace QLBanHang.Views
         private void UpdateData()
         {
             AssignData();
-
-            if (_ctrlNhaCungCap.UpdateData(_nhaCungCap))
-            {
-                MessageBox.Show(this, "Sửa thành công", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show(this, "Sửa thất bại", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _ctrlNhaCungCap.UpdateData(_nhaCungCap);
+    
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

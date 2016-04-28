@@ -14,7 +14,7 @@ namespace QLBanHang.Models
     {
         ConnectToSQL _conn = new ConnectToSQL();//Initialize connectoSQl class
 
-        public int GetNewSoHoaDon(string date)
+        public decimal GenerateNewSoHoaDon(string date)
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("select isnull(max(SoHoaDon) + 1,1) as SHD from tbHoaDon where cast(NgayLap as date) = '{0}'", date);
@@ -30,13 +30,22 @@ namespace QLBanHang.Models
             return _conn.ExecuteCMD();
         }
 
+
+
         public decimal GetIdHoaDon()
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("select MAX(id) as ID from tbHoaDon");
             _conn.FillData(table);
             return Convert.ToDecimal(table.Rows[0]["ID"].ToString());
-
         }
+
+        //public DataTable ThongKeHoaDon()
+        //{
+        //    DataTable table = new DataTable();//Create template table to get data from database
+        //    _conn.CMD.CommandText = String.Format("select * from tbCuaHang where tbCuaHang.MaCuaHang = '{0}'", maCuaHang);
+        //    _conn.FillData(table);
+        //    return table;
+        //}
     }
 }

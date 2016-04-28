@@ -89,8 +89,7 @@ namespace QLBanHang.Models
         public bool DeleteData(string maSanPham)
         {
             _conn.CMD.CommandText =String.Format ("delete tbSanPham  where " +
-            "dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') = '{0}' "
-            + "and tbNhaSanXuat.id = tbSanPham.idNhaSanXuat",maSanPham);
+            "tbSanPham.idNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') = '{0}' ", maSanPham);
             return _conn.ExecuteCMD();
         }
 

@@ -13,37 +13,30 @@ using QLBanHang.Views;
 
 namespace QLBanHang.Views
 {
-    public partial class FrmDangNhapDlg : Form
+    public partial class FrmDangNhapDlg : Form,IDangNhapView
     {
 
         ctrlNhanVien _ctrlNhanVien = new ctrlNhanVien();
 
-<<<<<<< HEAD
+        ctrlDangNhap _ctrlDangNhap = new ctrlDangNhap();
+
         private bool _isLoggedIn = false;
 
-        public bool IsLoggedIn
-        {
-            get { return _isLoggedIn; }
-            set { _isLoggedIn = value; }
-        }
-
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public FrmDangNhapDlg()
         {
             InitializeComponent();
+            _ctrlDangNhap.SetView(this);
         }
-
+        public bool IsLoggedIn 
+        {
+            get { return _isLoggedIn; } 
+            set { _isLoggedIn = value;}
+        }
 
         public string TenDangNhap
         {
-<<<<<<< HEAD
             get { return txtTenDangNhap.Text; }
             set { txtTenDangNhap.Text = value; }
-=======
-            get { return txtDangNhap.Text; }
-            set { txtDangNhap.Text = value; }
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         }
 
 
@@ -53,56 +46,26 @@ namespace QLBanHang.Views
             set { txtMatKhau.Text = value; }
         }
 
-<<<<<<< HEAD
-
-        private bool LogInSuccessful()
+        public void DangNhap()
         {
-            string _tenDangNhap = txtTenDangNhap.Text;
-            if (_ctrlNhanVien.IsExist(_tenDangNhap))
-            {
-                string _matKhau = _ctrlNhanVien.GetMatKhauNhanVien(_tenDangNhap);
-                if (_matKhau == txtMatKhau.Text)
-                {
-                    return true;
-                }
-            }
-            return false;
+            _ctrlDangNhap.DangNhapFromView();
         }
 
-
-        private void DangNhap()
-        {
-            while (!_isLoggedIn)
-            {
-                if (LogInSuccessful())
-                {
-                    _isLoggedIn = true;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("ko thể đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-        }
-
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
-        private void btnExit_Click(object sender, EventArgs e)
+        public void HuyDangNhap()
         {
             this.Close();
         }
 
-<<<<<<< HEAD
+        private void btnExit_Click(object sender, EventArgs e)
+        {    
+            this.Close();
+        }
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             DangNhap();
         }
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
        
     }
 }

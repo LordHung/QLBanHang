@@ -63,7 +63,6 @@ namespace QLBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap dauCong {
             get {
                 object obj = ResourceManager.GetObject("dauCong", resourceCulture);
@@ -94,11 +93,49 @@ namespace QLBanHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
+        internal static System.Drawing.Bitmap DauX {
+            get {
+                object obj = ResourceManager.GetObject("DauX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kinh_lup {
+            get {
+                object obj = ResourceManager.GetObject("kinh_lup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_key {
             get {
                 object obj = ResourceManager.GetObject("login_key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sua {
+            get {
+                object obj = ResourceManager.GetObject("sua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sua1 {
+            get {
+                object obj = ResourceManager.GetObject("sua1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

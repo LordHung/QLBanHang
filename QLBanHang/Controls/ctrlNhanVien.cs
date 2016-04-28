@@ -24,15 +24,12 @@ namespace QLBanHang.Controls
             return _mdlNhanVien.GetIdNhanVien(tenDangNhap);
         }
 
-<<<<<<< HEAD
         public string GetTenNhaVienById(int id)
         {
             return _mdlNhanVien.GetTenNhaVienById(id);
         }
 
 
-=======
->>>>>>> d13b728f740a2b50431497e2003f7ade782790b5
         public string GetMatKhauNhanVien(string tenDangNhap)
         {
             return _mdlNhanVien.GetMatKhauNhanVien(tenDangNhap);

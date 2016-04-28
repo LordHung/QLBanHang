@@ -7,13 +7,70 @@ using System.Data;
 using QLBanHang.Models;
 using QLBanHang.Objects;
 using System.Windows.Forms;
+using QLBanHang.Views;
 
 
 namespace QLBanHang.Controls
 {
+    public interface ILoaiSanPhamView
+    {
+        void AddLoaiSanPham();
+        void UpdateLoaiSanPham();
+        void DeleteLoaiSanPham();
+        void UpdateViewLoaiSanPham();
+    }
+
+
     class ctrlLoaiSanPham
     {
         mdlLoaiSanPham _mdlLoaiSanPham = new mdlLoaiSanPham();
+
+        ILoaiSanPhamView _viewLoaiSanPham;
+
+        public ctrlLoaiSanPham()
+        {
+        }
+
+        public void SetView(ILoaiSanPhamView view)
+        {
+            _viewLoaiSanPham = view;
+        }
+
+        public void UpdateLoaiSanPhamFromView(string _codeForUpdate)
+        {
+            using (UpdateLoaiSanPhamDlg dlg = new UpdateLoaiSanPhamDlg(_codeForUpdate))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    _viewLoaiSanPham.UpdateViewLoaiSanPham();
+                }
+            }
+        }
+
+        public void AddLoaiSanPhamFromView()
+        {
+            using (AddLoaiSanPhamDlg dlg = new AddLoaiSanPhamDlg())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    _viewLoaiSanPham.UpdateViewLoaiSanPham();
+                }
+            }
+        }
+
+        public void DeleteLoaiSanPhamFromView(string _codeForDelete)
+        {
+            DialogResult result = MessageBox.Show( "Bạn có chắc chắn muốn xóa ngành hàng\n" + _codeForDelete + "?"
+               , "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (_mdlLoaiSanPham.DeleteData(_codeForDelete))
+                    MessageBox.Show("Xóa thành công", "Xóa ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Xóa thất bại", "Xóa ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            _viewLoaiSanPham.UpdateViewLoaiSanPham();
+        }
 
         /// <summary>
         /// Lấy dữ liệu từ databse 
@@ -45,17 +102,32 @@ namespace QLBanHang.Controls
             return _mdlLoaiSanPham.GetLoaiSanPhamByCode(maLoaiSanPham);
         }
 
-        public bool AddData(clsLoaiSanPham loaiSanPham)
+        public void AddData(clsLoaiSanPham loaiSanPham)
         {
-            return _mdlLoaiSanPham.AddData(loaiSanPham);
+            if (!IsExist(loaiSanPham.MaLoaiSanPham))
+            {
+                if (_mdlLoaiSanPham.AddData(loaiSanPham))
+                {
+                    MessageBox.Show("Thêm thành công", "Thêm ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("Thêm thất bại", "Thêm ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show( "Đã có trong databse ", "Thêm ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>
         /// Cập nhập,sửa thông tin loại sản phẩm
         /// </summary>
-        public bool UpdateData(clsLoaiSanPham loaiSanPham)
+        public void UpdateData(clsLoaiSanPham loaiSanPham)
         {
-            return _mdlLoaiSanPham.UpdateData(loaiSanPham);
+            if (_mdlLoaiSanPham.UpdateData(loaiSanPham))
+            {
+                MessageBox.Show("Sửa thành công", "Cập nhật ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Sửa thất bại", "Cập nhập ngành hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>

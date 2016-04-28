@@ -61,12 +61,8 @@ namespace QLBanHang.Views
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AssignData();
-            if (_ctrlSanPham.AddData(_sanPham))
-            {
-                MessageBox.Show(this, "Thêm thành công", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show(this, "Thêm thất bại", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _ctrlSanPham.AddData(_sanPham);
+            
         }
 
         private void AssignData()

@@ -84,11 +84,7 @@ namespace QLBanHang.Views
         {
             AssignData();
 
-            if (_ctrlSanPham.UpdateData(_sanPham))
-            {
-                MessageBox.Show(this, "Sửa thành công", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else MessageBox.Show(this, "Sửa thất bại", "Thêm nhà sản xuất", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           _ctrlSanPham.UpdateData(_sanPham);
         }
 
         private void DisplayMaSanPham()
