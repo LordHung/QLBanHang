@@ -53,7 +53,8 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1127, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1168, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -65,25 +66,32 @@
             // 
             // dgViewSanPham
             // 
+            this.dgViewSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgViewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSanPham.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgViewSanPham.Location = new System.Drawing.Point(0, 25);
+            this.dgViewSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewSanPham.MultiSelect = false;
             this.dgViewSanPham.Name = "dgViewSanPham";
-            this.dgViewSanPham.Size = new System.Drawing.Size(1127, 294);
+            this.dgViewSanPham.ReadOnly = true;
+            this.dgViewSanPham.Size = new System.Drawing.Size(1168, 327);
             this.dgViewSanPham.TabIndex = 1;
+            this.dgViewSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewSanPham_DataBindingComplete);
             // 
             // toolStrip2
             // 
-            this.toolStrip2.Location = new System.Drawing.Point(0, 319);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 352);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1127, 25);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(1168, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 344);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 377);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -95,53 +103,66 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgViewMaVachSanPham);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip4);
-            this.splitContainer1.Size = new System.Drawing.Size(1127, 334);
-            this.splitContainer1.SplitterDistance = 466;
+            this.splitContainer1.Size = new System.Drawing.Size(1168, 336);
+            this.splitContainer1.SplitterDistance = 482;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 3;
             // 
             // dgViewSanPhamCuaHang
             // 
+            this.dgViewSanPhamCuaHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgViewSanPhamCuaHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSanPhamCuaHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgViewSanPhamCuaHang.Location = new System.Drawing.Point(0, 25);
+            this.dgViewSanPhamCuaHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewSanPhamCuaHang.MultiSelect = false;
             this.dgViewSanPhamCuaHang.Name = "dgViewSanPhamCuaHang";
-            this.dgViewSanPhamCuaHang.Size = new System.Drawing.Size(466, 309);
+            this.dgViewSanPhamCuaHang.ReadOnly = true;
+            this.dgViewSanPhamCuaHang.Size = new System.Drawing.Size(482, 311);
             this.dgViewSanPhamCuaHang.TabIndex = 4;
             // 
             // toolStrip3
             // 
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(466, 25);
+            this.toolStrip3.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip3.Size = new System.Drawing.Size(482, 25);
             this.toolStrip3.TabIndex = 3;
             this.toolStrip3.Text = "toolStrip3";
             // 
             // dgViewMaVachSanPham
             // 
+            this.dgViewMaVachSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgViewMaVachSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewMaVachSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgViewMaVachSanPham.Location = new System.Drawing.Point(0, 25);
+            this.dgViewMaVachSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewMaVachSanPham.MultiSelect = false;
             this.dgViewMaVachSanPham.Name = "dgViewMaVachSanPham";
-            this.dgViewMaVachSanPham.Size = new System.Drawing.Size(657, 309);
+            this.dgViewMaVachSanPham.ReadOnly = true;
+            this.dgViewMaVachSanPham.Size = new System.Drawing.Size(680, 311);
             this.dgViewMaVachSanPham.TabIndex = 5;
             // 
             // toolStrip4
             // 
             this.toolStrip4.Location = new System.Drawing.Point(0, 0);
             this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(657, 25);
+            this.toolStrip4.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip4.Size = new System.Drawing.Size(680, 25);
             this.toolStrip4.TabIndex = 3;
             this.toolStrip4.Text = "toolStrip4";
             // 
             // FrmDanhMucSP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 678);
+            this.ClientSize = new System.Drawing.Size(1168, 713);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.dgViewSanPham);
             this.Controls.Add(this.toolStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmDanhMucSP";
             this.Text = "DanhMucSp";
             this.toolStrip1.ResumeLayout(false);
