@@ -68,9 +68,9 @@ namespace QLBanHang.Models
             return _conn.ExecuteCMD();
         }
 
-        /// <summary>
+        /// 
         /// Bán lẽ 
-        /// </summary>
+        ///
 
         public int GetGiaVonBanLe(int id,int soLuong)
         {
