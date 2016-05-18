@@ -38,7 +38,7 @@ namespace QLBanHang.Models
         ///Contructor
         public ConnectToSQL()
         {
-            _connectionString = @"Data Source=_L_-PC;Initial Catalog=QLBanHang;Integrated Security=True";
+            _connectionString = @"Data Source=L-PC\SQLEXPRESS;Initial Catalog=QLBanHang;Integrated Security=True";
             try
             {
                 _connection = new SqlConnection(_connectionString);//Connect to Database

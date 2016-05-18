@@ -30,6 +30,7 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsBtnAddSanPham = new System.Windows.Forms.ToolStripButton();
             this.dgViewSanPham = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -37,6 +38,8 @@
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.dgViewMaVachSanPham = new System.Windows.Forms.DataGridView();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.btnAddMaVach = new System.Windows.Forms.ToolStripButton();
+            this.btnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -45,12 +48,14 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSanPhamCuaHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachSanPham)).BeginInit();
+            this.toolStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.tsBtnAddSanPham});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -63,6 +68,17 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(60, 22);
             this.toolStripLabel1.Text = "Sản phẩm";
+            // 
+            // tsBtnAddSanPham
+            // 
+            this.tsBtnAddSanPham.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnAddSanPham.Image = global::QLBanHang.Properties.Resources.dauCong;
+            this.tsBtnAddSanPham.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddSanPham.Name = "tsBtnAddSanPham";
+            this.tsBtnAddSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tsBtnAddSanPham.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnAddSanPham.Text = "toolStripButton1";
+            this.tsBtnAddSanPham.Click += new System.EventHandler(this.tsBtnAdd_Click);
             // 
             // dgViewSanPham
             // 
@@ -79,6 +95,7 @@
             this.dgViewSanPham.TabIndex = 1;
             this.dgViewSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSanPham_CellClick);
             this.dgViewSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewSanPham_DataBindingComplete);
+            this.dgViewSanPham.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewSanPham_RowPostPaint);
             // 
             // toolStrip2
             // 
@@ -125,6 +142,7 @@
             this.dgViewSanPhamCuaHang.TabIndex = 4;
             this.dgViewSanPhamCuaHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSanPhamCuaHang_CellClick);
             this.dgViewSanPhamCuaHang.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewSanPhamCuaHang_DataBindingComplete);
+            this.dgViewSanPhamCuaHang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewSanPham_RowPostPaint);
             // 
             // toolStrip3
             // 
@@ -149,15 +167,39 @@
             this.dgViewMaVachSanPham.TabIndex = 5;
             this.dgViewMaVachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMaVachSanPham_CellClick);
             this.dgViewMaVachSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVachSanPham_DataBindingComplete);
+            this.dgViewMaVachSanPham.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewSanPham_RowPostPaint);
             // 
             // toolStrip4
             // 
+            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddMaVach,
+            this.btnUpdate});
             this.toolStrip4.Location = new System.Drawing.Point(0, 0);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip4.Size = new System.Drawing.Size(680, 25);
             this.toolStrip4.TabIndex = 3;
             this.toolStrip4.Text = "toolStrip4";
+            // 
+            // btnAddMaVach
+            // 
+            this.btnAddMaVach.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddMaVach.Image = global::QLBanHang.Properties.Resources.dauCong;
+            this.btnAddMaVach.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddMaVach.Name = "btnAddMaVach";
+            this.btnAddMaVach.Size = new System.Drawing.Size(23, 22);
+            this.btnAddMaVach.Text = "toolStripButton1";
+            this.btnAddMaVach.Click += new System.EventHandler(this.btnAddMaVach_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUpdate.Image = global::QLBanHang.Properties.Resources.sua1;
+            this.btnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(23, 22);
+            this.btnUpdate.Text = "toolStripButton1";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FrmDanhMucSP
             // 
@@ -183,6 +225,8 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSanPhamCuaHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachSanPham)).EndInit();
+            this.toolStrip4.ResumeLayout(false);
+            this.toolStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +243,8 @@
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.DataGridView dgViewMaVachSanPham;
         private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStripButton tsBtnAddSanPham;
+        private System.Windows.Forms.ToolStripButton btnAddMaVach;
+        private System.Windows.Forms.ToolStripButton btnUpdate;
     }
 }

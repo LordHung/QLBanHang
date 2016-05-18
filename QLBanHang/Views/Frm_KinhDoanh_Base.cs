@@ -270,5 +270,10 @@ namespace QLBanHang.Views
         {
             lblSoLuongMaVachDuocChon.Text = (dgViewMaVachDaChon.Rows.Count - 1).ToString() + " sản phẩm.";
         }
+
+        private void dgViewMaVachDaChon_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+
+        }
     }
 }

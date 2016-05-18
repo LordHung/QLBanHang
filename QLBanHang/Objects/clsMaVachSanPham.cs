@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLBanHang.Objects
 {
-    class clsMaVachSanPham
+    public class clsMaVachSanPham
     {
         ///Là Mã Vạch của 1 sản phẩm thuộc 1 cửa hàng
 

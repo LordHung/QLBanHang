@@ -15,7 +15,7 @@ using System.Threading;
 
 namespace QLBanHang.Views
 {
-    public partial class FrmDanhMucSP : Form
+    public partial class FrmDanhMucSP : Form,ISanPhamView,IMaVachSanPhamView
     {
 
         ctrlSanPham _ctrlSanPham = new ctrlSanPham();
@@ -40,11 +40,15 @@ namespace QLBanHang.Views
 
         DataTable _sanPhamCuaHangDT = new DataTable();
 
+        int _idSanPhamCuaHang;
+
         int _idCuaHang;
 
         public FrmDanhMucSP()
         {
             InitializeComponent();
+            _ctrlSanPham.SetView(this);
+            _ctrlMaVachSanPham.SetView(this);
             LoadSanPham();
             LoadSanPhamCuaHang();
             LoadMaVachSanPham();
@@ -80,30 +84,80 @@ namespace QLBanHang.Views
 
         private void dgViewSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= _sanPhamDT.Rows.Count)
+                return;
             _idSanPham = Convert.ToInt32(dgViewSanPham.CurrentRow.Cells[0].Value.ToString());
             LoadSanPhamCuaHang();
             LoadMaVachSanPham();
-            dgViewMaVachSanPham.Invalidate();
+            //dgViewMaVachSanPham.Invalidate();
         }
 
+
+    
+        ///
+        ///SanPhamCuaHang
+        ///
+
+        private void LoadSanPhamCuaHang()
+        {
+            _sanPhamCuaHangDT = new DataTable();
+            _sanPhamCuaHangDT = _ctrlSanPhamCuaHang.GetThongTinByIdSanPham(_idSanPham);
+
+            dgViewSanPhamCuaHang.DataSource = _sanPhamCuaHangDT;
+
+            _idSanPhamCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.Rows[0].Cells[0].Value.ToString());
+            _idCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.Rows[0].Cells[1].Value.ToString());
+        }        
+
+        private void dgViewSanPhamCuaHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgViewSanPhamCuaHang.Columns["id"].Visible = false;
+            dgViewSanPhamCuaHang.Columns["idCuaHang"].Visible = false;
+        }
+
+
+        private void dgViewSanPhamCuaHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= _sanPhamCuaHangDT.Rows.Count)
+                return;
+            _idSanPhamCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.CurrentRow.Cells[0].Value.ToString());
+            _idCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.CurrentRow.Cells[1].Value.ToString());
+            LoadMaVachSanPham();
+            //dgViewMaVachSanPham.Invalidate();
+        }
+
+        private void tsBtnAdd_Click(object sender, EventArgs e)
+        {
+            AddSanPhamDlg dlg = new AddSanPhamDlg(_ctrlSanPham);
+            dlg.Owner = this;
+            dlg.StartPosition = FormStartPosition.CenterParent;
+            var dialogResult = dlg.ShowDialog();
+        }
+
+     
         /// <summary>
         /// MAVACHSANPHAM
         /// </summary>
         private void LoadMaVachSanPham()
         {
             _maVachSanPhamDT = new DataTable();
-            _maVachSanPhamDT = _ctrlMaVachSanPham.GetData(_idCuaHang,_idSanPham);
+            _maVachSanPhamDT = _ctrlMaVachSanPham.GetData(_idCuaHang, _idSanPhamCuaHang);
             dgViewMaVachSanPham.DataSource = _maVachSanPhamDT;
-
+            _idMaVachSanPham = Convert.ToInt32(dgViewMaVachSanPham.Rows[0].Cells[0].Value.ToString());
         }
 
- 
+        private void dgViewMaVachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= _maVachSanPhamDT.Rows.Count)
+                return;
+            _idMaVachSanPham = Convert.ToInt32(dgViewMaVachSanPham.CurrentRow.Cells[0].Value.ToString());
+        }
 
         private void dgViewMaVachSanPham_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgViewMaVachSanPham.Columns["id"].Visible = false;
 
-            
+
 
             dgViewMaVachSanPham.Columns["MaVach"].HeaderText = "Mã Vạch";
             dgViewMaVachSanPham.Columns["MaVach"].DefaultCellStyle.ForeColor = Color.Red;
@@ -135,34 +189,38 @@ namespace QLBanHang.Views
 
         }
 
-    
-        ///
-        ///SanPhamCuaHang
-        ///
 
-        private void LoadSanPhamCuaHang()
+
+        public void UpdateView()
         {
-            _sanPhamCuaHangDT = new DataTable();
-            _sanPhamCuaHangDT = _ctrlSanPhamCuaHang.GetThongTinByIdSanPham(_idSanPham);
-            dgViewSanPhamCuaHang.DataSource = _sanPhamCuaHangDT;
-            _idCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.Rows[0].Cells[0].Value.ToString());
+            LoadSanPham();
         }
 
-        private void dgViewSanPhamCuaHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void UpdateMaVachSanPhamView()
         {
-            _idCuaHang = Convert.ToInt32(dgViewSanPhamCuaHang.CurrentRow.Cells[0].Value.ToString());
+            LoadSanPhamCuaHang();
             LoadMaVachSanPham();
-            dgViewMaVachSanPham.Invalidate();
         }
 
-        private void dgViewSanPhamCuaHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dgViewSanPham_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            dgViewSanPhamCuaHang.Columns["id"].Visible = false;
+            ImprovePerfomance.RowPostPaint(sender, e, this);
         }
 
-        private void dgViewMaVachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAddMaVach_Click(object sender, EventArgs e)
         {
-            _idMaVachSanPham = Convert.ToInt32(dgViewMaVachSanPham.CurrentRow.Cells[0].Value.ToString());
+            AddMaVachSanPhamDlg dlg = new AddMaVachSanPhamDlg(_ctrlMaVachSanPham,_idSanPham);
+            dlg.Owner = this;
+            dlg.StartPosition = FormStartPosition.CenterParent;
+            var dialogResult = dlg.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateMaVachSanPhamDlg dlg = new UpdateMaVachSanPhamDlg(_ctrlMaVachSanPham,_idMaVachSanPham);
+            dlg.Owner = this;
+            dlg.StartPosition = FormStartPosition.CenterParent;
+            var dialogResult = dlg.ShowDialog();
         }
 
 

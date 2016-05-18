@@ -127,9 +127,7 @@ namespace QLBanHang.Views
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AssignData();
-            _ctrlSanPham.AddData(_sanPham);
-            
+            AddData();
         }
 
         private bool AssignData()

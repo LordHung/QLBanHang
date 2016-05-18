@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.tSbtnMinusMaVach = new System.Windows.Forms.ToolStripButton();
-            this.dgViewMaVachDaChon = new System.Windows.Forms.DataGridView();
             this.tSMaVachDaChon = new System.Windows.Forms.ToolStrip();
             this.tSBtnPlusMaVach = new System.Windows.Forms.ToolStripButton();
             this.tSBtnChonMaVach = new System.Windows.Forms.ToolStripButton();
-            this.dgViewMaVach = new System.Windows.Forms.DataGridView();
             this.tSMaVach = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tsSoLuongMaVachSanPham = new System.Windows.Forms.ToolStrip();
+            this.lblSoLuongMaVach = new System.Windows.Forms.ToolStripLabel();
+            this.tsSoLuongSanPhamDuocChon = new System.Windows.Forms.ToolStrip();
+            this.lblSoLuongMaVachDuocChon = new System.Windows.Forms.ToolStripLabel();
             this.tSBtnXemTruoc = new System.Windows.Forms.ToolStripButton();
             this.tSbBtnDongY = new System.Windows.Forms.ToolStripButton();
             this.tSCmbCuaHang = new System.Windows.Forms.ToolStripComboBox();
@@ -44,21 +46,19 @@
             this.tSTxtMain = new System.Windows.Forms.ToolStripLabel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tSMain = new System.Windows.Forms.ToolStrip();
-            this.tsSoLuongMaVachSanPham = new System.Windows.Forms.ToolStrip();
-            this.lblSoLuongMaVach = new System.Windows.Forms.ToolStripLabel();
-            this.tsSoLuongSanPhamDuocChon = new System.Windows.Forms.ToolStrip();
-            this.lblSoLuongMaVachDuocChon = new System.Windows.Forms.ToolStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachDaChon)).BeginInit();
+            this.dgViewMaVach = new System.Windows.Forms.DataGridView();
+            this.dgViewMaVachDaChon = new System.Windows.Forms.DataGridView();
             this.tSMaVachDaChon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVach)).BeginInit();
             this.tSMaVach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tSMain.SuspendLayout();
             this.tsSoLuongMaVachSanPham.SuspendLayout();
             this.tsSoLuongSanPhamDuocChon.SuspendLayout();
+            this.tSMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachDaChon)).BeginInit();
             this.SuspendLayout();
             // 
             // tSbtnMinusMaVach
@@ -69,22 +69,6 @@
             this.tSbtnMinusMaVach.Size = new System.Drawing.Size(38, 22);
             this.tSbtnMinusMaVach.Text = "-1";
             this.tSbtnMinusMaVach.Click += new System.EventHandler(this.tSbtnMinusMaVach_Click);
-            // 
-            // dgViewMaVachDaChon
-            // 
-            this.dgViewMaVachDaChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewMaVachDaChon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgViewMaVachDaChon.Location = new System.Drawing.Point(0, 25);
-            this.dgViewMaVachDaChon.MultiSelect = false;
-            this.dgViewMaVachDaChon.Name = "dgViewMaVachDaChon";
-            this.dgViewMaVachDaChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgViewMaVachDaChon.Size = new System.Drawing.Size(712, 374);
-            this.dgViewMaVachDaChon.TabIndex = 1;
-            this.dgViewMaVachDaChon.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgViewMaVach_CellValueNeeded);
-            this.dgViewMaVachDaChon.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVachDaChon_DataBindingComplete);
-            this.dgViewMaVachDaChon.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewMaVach_RowPostPaint);
-            this.dgViewMaVachDaChon.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgViewMaVachDaChon_RowsAdded);
-            this.dgViewMaVachDaChon.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgViewMaVachDaChon_RowsRemoved);
             // 
             // tSMaVachDaChon
             // 
@@ -117,22 +101,6 @@
             this.tSBtnChonMaVach.Text = "Chọn";
             this.tSBtnChonMaVach.Click += new System.EventHandler(this.tSBtnChonMaVach_Click);
             // 
-            // dgViewMaVach
-            // 
-            this.dgViewMaVach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgViewMaVach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewMaVach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgViewMaVach.Location = new System.Drawing.Point(0, 25);
-            this.dgViewMaVach.MultiSelect = false;
-            this.dgViewMaVach.Name = "dgViewMaVach";
-            this.dgViewMaVach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgViewMaVach.Size = new System.Drawing.Size(499, 374);
-            this.dgViewMaVach.TabIndex = 3;
-            this.dgViewMaVach.VirtualMode = true;
-            this.dgViewMaVach.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgViewMaVach_CellValueNeeded);
-            this.dgViewMaVach.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVach_DataBindingComplete);
-            this.dgViewMaVach.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewMaVach_RowPostPaint);
-            // 
             // tSMaVach
             // 
             this.tSMaVach.BackColor = System.Drawing.Color.Azure;
@@ -152,20 +120,54 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tsSoLuongMaVachSanPham);
             this.splitContainer1.Panel1.Controls.Add(this.dgViewMaVach);
+            this.splitContainer1.Panel1.Controls.Add(this.tsSoLuongMaVachSanPham);
             this.splitContainer1.Panel1.Controls.Add(this.tSMaVach);
             this.splitContainer1.Panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tsSoLuongSanPhamDuocChon);
             this.splitContainer1.Panel2.Controls.Add(this.dgViewMaVachDaChon);
+            this.splitContainer1.Panel2.Controls.Add(this.tsSoLuongSanPhamDuocChon);
             this.splitContainer1.Panel2.Controls.Add(this.tSMaVachDaChon);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.splitContainer1.Size = new System.Drawing.Size(1215, 399);
             this.splitContainer1.SplitterDistance = 499;
             this.splitContainer1.TabIndex = 29;
+            // 
+            // tsSoLuongMaVachSanPham
+            // 
+            this.tsSoLuongMaVachSanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsSoLuongMaVachSanPham.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblSoLuongMaVach});
+            this.tsSoLuongMaVachSanPham.Location = new System.Drawing.Point(0, 374);
+            this.tsSoLuongMaVachSanPham.Name = "tsSoLuongMaVachSanPham";
+            this.tsSoLuongMaVachSanPham.Size = new System.Drawing.Size(499, 25);
+            this.tsSoLuongMaVachSanPham.TabIndex = 4;
+            this.tsSoLuongMaVachSanPham.Text = "toolStrip1";
+            // 
+            // lblSoLuongMaVach
+            // 
+            this.lblSoLuongMaVach.Name = "lblSoLuongMaVach";
+            this.lblSoLuongMaVach.Size = new System.Drawing.Size(86, 22);
+            this.lblSoLuongMaVach.Text = "toolStripLabel1";
+            // 
+            // tsSoLuongSanPhamDuocChon
+            // 
+            this.tsSoLuongSanPhamDuocChon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsSoLuongSanPhamDuocChon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblSoLuongMaVachDuocChon});
+            this.tsSoLuongSanPhamDuocChon.Location = new System.Drawing.Point(0, 374);
+            this.tsSoLuongSanPhamDuocChon.Name = "tsSoLuongSanPhamDuocChon";
+            this.tsSoLuongSanPhamDuocChon.Size = new System.Drawing.Size(712, 25);
+            this.tsSoLuongSanPhamDuocChon.TabIndex = 5;
+            this.tsSoLuongSanPhamDuocChon.Text = "toolStrip1";
+            // 
+            // lblSoLuongMaVachDuocChon
+            // 
+            this.lblSoLuongMaVachDuocChon.Name = "lblSoLuongMaVachDuocChon";
+            this.lblSoLuongMaVachDuocChon.Size = new System.Drawing.Size(86, 22);
+            this.lblSoLuongMaVachDuocChon.Text = "toolStripLabel1";
             // 
             // tSBtnXemTruoc
             // 
@@ -238,39 +240,37 @@
             this.tSMain.TabIndex = 27;
             this.tSMain.Text = "toolStrip1";
             // 
-            // tsSoLuongMaVachSanPham
+            // dgViewMaVach
             // 
-            this.tsSoLuongMaVachSanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tsSoLuongMaVachSanPham.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblSoLuongMaVach});
-            this.tsSoLuongMaVachSanPham.Location = new System.Drawing.Point(0, 374);
-            this.tsSoLuongMaVachSanPham.Name = "tsSoLuongMaVachSanPham";
-            this.tsSoLuongMaVachSanPham.Size = new System.Drawing.Size(499, 25);
-            this.tsSoLuongMaVachSanPham.TabIndex = 4;
-            this.tsSoLuongMaVachSanPham.Text = "toolStrip1";
+            this.dgViewMaVach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgViewMaVach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgViewMaVach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgViewMaVach.Location = new System.Drawing.Point(0, 25);
+            this.dgViewMaVach.MultiSelect = false;
+            this.dgViewMaVach.Name = "dgViewMaVach";
+            this.dgViewMaVach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgViewMaVach.Size = new System.Drawing.Size(499, 349);
+            this.dgViewMaVach.TabIndex = 5;
+            this.dgViewMaVach.VirtualMode = true;
+            this.dgViewMaVach.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgViewMaVach_CellValueNeeded);
+            this.dgViewMaVach.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVach_DataBindingComplete);
+            this.dgViewMaVach.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewMaVach_RowPostPaint);
             // 
-            // lblSoLuongMaVach
+            // dgViewMaVachDaChon
             // 
-            this.lblSoLuongMaVach.Name = "lblSoLuongMaVach";
-            this.lblSoLuongMaVach.Size = new System.Drawing.Size(86, 22);
-            this.lblSoLuongMaVach.Text = "toolStripLabel1";
-            // 
-            // tsSoLuongSanPhamDuocChon
-            // 
-            this.tsSoLuongSanPhamDuocChon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tsSoLuongSanPhamDuocChon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblSoLuongMaVachDuocChon});
-            this.tsSoLuongSanPhamDuocChon.Location = new System.Drawing.Point(0, 374);
-            this.tsSoLuongSanPhamDuocChon.Name = "tsSoLuongSanPhamDuocChon";
-            this.tsSoLuongSanPhamDuocChon.Size = new System.Drawing.Size(712, 25);
-            this.tsSoLuongSanPhamDuocChon.TabIndex = 5;
-            this.tsSoLuongSanPhamDuocChon.Text = "toolStrip1";
-            // 
-            // lblSoLuongMaVachDuocChon
-            // 
-            this.lblSoLuongMaVachDuocChon.Name = "lblSoLuongMaVachDuocChon";
-            this.lblSoLuongMaVachDuocChon.Size = new System.Drawing.Size(86, 22);
-            this.lblSoLuongMaVachDuocChon.Text = "toolStripLabel1";
+            this.dgViewMaVachDaChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgViewMaVachDaChon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgViewMaVachDaChon.Location = new System.Drawing.Point(0, 25);
+            this.dgViewMaVachDaChon.MultiSelect = false;
+            this.dgViewMaVachDaChon.Name = "dgViewMaVachDaChon";
+            this.dgViewMaVachDaChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgViewMaVachDaChon.Size = new System.Drawing.Size(712, 349);
+            this.dgViewMaVachDaChon.TabIndex = 6;
+            this.dgViewMaVachDaChon.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgViewMaVachDaChon_CellValueNeeded);
+            this.dgViewMaVachDaChon.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVachDaChon_DataBindingComplete);
+            this.dgViewMaVachDaChon.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgViewMaVach_RowPostPaint);
+            this.dgViewMaVachDaChon.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgViewMaVachDaChon_RowsAdded);
+            this.dgViewMaVachDaChon.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgViewMaVachDaChon_RowsRemoved);
             // 
             // Frm_KinhDoanh_Base
             // 
@@ -282,10 +282,8 @@
             this.Controls.Add(this.tSMain);
             this.Name = "Frm_KinhDoanh_Base";
             this.Text = "Frm_KinhDoanh_Base";
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachDaChon)).EndInit();
             this.tSMaVachDaChon.ResumeLayout(false);
             this.tSMaVachDaChon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVach)).EndInit();
             this.tSMaVach.ResumeLayout(false);
             this.tSMaVach.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -294,12 +292,14 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tSMain.ResumeLayout(false);
-            this.tSMain.PerformLayout();
             this.tsSoLuongMaVachSanPham.ResumeLayout(false);
             this.tsSoLuongMaVachSanPham.PerformLayout();
             this.tsSoLuongSanPhamDuocChon.ResumeLayout(false);
             this.tsSoLuongSanPhamDuocChon.PerformLayout();
+            this.tSMain.ResumeLayout(false);
+            this.tSMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewMaVachDaChon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,11 +308,9 @@
         #endregion
 
         protected System.Windows.Forms.ToolStripButton tSbtnMinusMaVach;
-        protected System.Windows.Forms.DataGridView dgViewMaVachDaChon;
         protected System.Windows.Forms.ToolStrip tSMaVachDaChon;
         protected System.Windows.Forms.ToolStripButton tSBtnPlusMaVach;
         protected System.Windows.Forms.ToolStripButton tSBtnChonMaVach;
-        protected System.Windows.Forms.DataGridView dgViewMaVach;
         protected System.Windows.Forms.ToolStrip tSMaVach;
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.ToolStripButton tSBtnXemTruoc;
@@ -327,6 +325,8 @@
         private System.Windows.Forms.ToolStripLabel lblSoLuongMaVach;
         private System.Windows.Forms.ToolStrip tsSoLuongSanPhamDuocChon;
         private System.Windows.Forms.ToolStripLabel lblSoLuongMaVachDuocChon;
+        protected System.Windows.Forms.DataGridView dgViewMaVach;
+        protected System.Windows.Forms.DataGridView dgViewMaVachDaChon;
 
     }
 }

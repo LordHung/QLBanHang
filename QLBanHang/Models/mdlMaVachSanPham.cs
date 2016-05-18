@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using QLBanHang.Objects;
 using System.Windows.Forms;
+
+
 namespace QLBanHang.Models
 {
     class mdlMaVachSanPham
@@ -14,7 +16,7 @@ namespace QLBanHang.Models
         ConnectToSQL _conn = new ConnectToSQL();//Initialize connectoSQl class
 
 
-        public DataTable GetData(int idCuaHang = 9,int idSanPham = 0)
+        public DataTable GetData(int idCuaHang = 9,int idSanPhamCuaHang = 0)
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("SELECT tbMaVachSanPham.id,tbMaVachSanPham.MaVach,dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
@@ -24,13 +26,30 @@ namespace QLBanHang.Models
 	                                +"and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham and tbSanPhamCuaHang.idCuaHang = '{0}' "
 	                                +"and tbMaVachSanPham.SuDung = '1' "
 	                                +"and tbNhaCungCap.id = tbMaVachSanPham.idNhaCungCap ",idCuaHang);
-            if (idSanPham != 0)
+            if (idSanPhamCuaHang != 0)
             {
-                _conn.CMD.CommandText += String.Format("and idSanPham = '{0}' ",idSanPham);
+                _conn.CMD.CommandText += String.Format("and idSanPhamCuaHang = '{0}' ", idSanPhamCuaHang);
             }
             _conn.FillData(table);
             return table;
         }
+
+        public DataTable GetDataByIdMaVach(int idMaVachSanPham)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format("SELECT dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham ,* "
+                                    + "from tbNhaSanXuat,tbSanPham,tbLoaiSanPham,tbNganhSanPham,tbMaVachSanPham,tbSanPhamCuaHang,tbNhaCungCap,tbCuaHang "
+                                    + "where tbNhaSanXuat.id = tbSanPham.idNhaSanXuat and tbLoaiSanPham.id = tbSanPham.idLoaiSanPham and tbLoaiSanPham.idNganhSanPham = tbNganhSanPham.id  "
+                                    + "and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham  "
+                                    + "and tbMaVachSanPham.SuDung = '1'  "
+                                    + "and tbNhaCungCap.id = tbMaVachSanPham.idNhaCungCap "
+                                    + "and tbCuaHang.id = tbSanPhamCuaHang.idCuaHang "
+                                    + "and tbMaVachSanPham.id = '{0}'", idMaVachSanPham);
+        
+            _conn.FillData(table);
+            return table;
+        }
+
 
         public int GetIdByMaVach(string maVach)
         { 
@@ -86,6 +105,63 @@ namespace QLBanHang.Models
             return Convert.ToInt32(table.Rows[0]["GN"].ToString());
         }
         //("select  {0}*Round(GiaNhap,-2) as GN from  tbMaVachSanPham 
+        mdlSanPhamCuaHang _mdlSanPhamCuaHang = new mdlSanPhamCuaHang();
+
+        public bool AddMaVachTheoIdSanPham(clsMaVachSanPham maVachSanPham,int idSanPham)
+        {
+            DataTable tbSanPhamCuaHang = _mdlSanPhamCuaHang.GetThongTinByIdSanPham(idSanPham);
+            foreach (DataRow row in tbSanPhamCuaHang.Rows)
+            {
+                maVachSanPham.IdSanPhamCuaHang = Convert.ToInt32(row["id"].ToString());
+                if (!AddData(maVachSanPham))
+                {
+                    MessageBox.Show("Lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public bool AddData(clsMaVachSanPham maVachSanPham)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format("insert tbMaVachSanPham (MaVach,idNhaCungCap,SoLuong,SuDung,GiaBan,"
+            +"idNhanVien,GiaNhap,GiaBQGQ,VAT,HetBan,KhongTichLuyDiem,GiaSi,idSanPhamCuaHang,NgayTao) "
+            + "VALUES ('{0}', '{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}','{10}','{11}','{12}', cast('{13}' as datetime))"
+            ,maVachSanPham.MaVach
+            ,maVachSanPham.IdNhaCungCap
+            ,0
+            ,maVachSanPham.SuDung
+            ,maVachSanPham.GiaBan
+            ,maVachSanPham.IdNhanVien
+            ,maVachSanPham.GiaNhap
+            ,maVachSanPham.GiaBQGQ
+            ,maVachSanPham.VAT
+            ,false
+            ,maVachSanPham.KhongTichLuyDiem
+            ,maVachSanPham.GiaSi
+            ,maVachSanPham.IdSanPhamCuaHang
+            ,maVachSanPham.NgayTao.ToString("yyyy-MM-dd hh:mm:ss.FFF")
+            );
+            return _conn.ExecuteCMD();
+        }
+
+
+        public bool UpdateData(clsMaVachSanPham maVachSanPham)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format("update tbMaVachSanPham set MaVach ='{0}' "
+                +",idNhaCungCap = '{1}'"
+                +",VAT = '{2}' "
+                +" where id = '{3}'"
+            , maVachSanPham.MaVach
+            , maVachSanPham.IdNhaCungCap
+            , maVachSanPham.VAT
+            , maVachSanPham.Id
+            );
+            return _conn.ExecuteCMD();
+        }
 
     }
 }

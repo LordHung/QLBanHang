@@ -33,7 +33,7 @@ namespace QLBanHang.Models
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format(
-                "SELECT distinct(tbCuaHang.id),dbo.tbNhaSanXuat.MaNhaSanXuat "
+                "SELECT distinct(tbSanPhamCuaHang.id),tbCuaHang.id as idCuaHang,dbo.tbNhaSanXuat.MaNhaSanXuat "
                 +" + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
                     +",tbCuaHang.MaCuaHang +'/' +tbCuaHang.TenCuaHang, "
                     +"tbSanPham.TenSanPham "

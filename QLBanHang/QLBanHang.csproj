@@ -152,6 +152,18 @@
     <Compile Include="Views\AddLoaiKhachHangDlg.Designer.cs">
       <DependentUpon>AddLoaiKhachHangDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddMaVachSanPhamDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddMaVachSanPhamDlg.Designer.cs">
+      <DependentUpon>AddMaVachSanPhamDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DlgMaVachSanPhamBse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DlgMaVachSanPhamBse.Designer.cs">
+      <DependentUpon>DlgMaVachSanPhamBse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNganhSanPhamDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +446,12 @@
     <Compile Include="Views\UpdateKhachHangDLg.Designer.cs">
       <DependentUpon>UpdateKhachHangDLg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UpdateMaVachSanPhamDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateMaVachSanPhamDlg.Designer.cs">
+      <DependentUpon>UpdateMaVachSanPhamDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UpdateNganhSanPhamDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +504,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddLoaiKhachHangDlg.resx">
       <DependentUpon>AddLoaiKhachHangDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddMaVachSanPhamDlg.resx">
+      <DependentUpon>AddMaVachSanPhamDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DlgMaVachSanPhamBse.resx">
+      <DependentUpon>DlgMaVachSanPhamBse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddNganhSanPhamDlg.resx">
       <DependentUpon>AddNganhSanPhamDlg.cs</DependentUpon>
@@ -627,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UpdateKhachHangDLg.resx">
       <DependentUpon>UpdateKhachHangDLg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdateMaVachSanPhamDlg.resx">
+      <DependentUpon>UpdateMaVachSanPhamDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UpdateNganhSanPhamDlg.resx">
       <DependentUpon>UpdateNganhSanPhamDlg.cs</DependentUpon>
