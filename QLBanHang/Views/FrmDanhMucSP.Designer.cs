@@ -70,12 +70,14 @@
             this.dgViewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSanPham.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgViewSanPham.Location = new System.Drawing.Point(0, 25);
-            this.dgViewSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgViewSanPham.MultiSelect = false;
             this.dgViewSanPham.Name = "dgViewSanPham";
             this.dgViewSanPham.ReadOnly = true;
+            this.dgViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgViewSanPham.Size = new System.Drawing.Size(1168, 327);
             this.dgViewSanPham.TabIndex = 1;
+            this.dgViewSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSanPham_CellClick);
             this.dgViewSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewSanPham_DataBindingComplete);
             // 
             // toolStrip2
@@ -91,7 +93,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 377);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -114,12 +116,15 @@
             this.dgViewSanPhamCuaHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSanPhamCuaHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgViewSanPhamCuaHang.Location = new System.Drawing.Point(0, 25);
-            this.dgViewSanPhamCuaHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewSanPhamCuaHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgViewSanPhamCuaHang.MultiSelect = false;
             this.dgViewSanPhamCuaHang.Name = "dgViewSanPhamCuaHang";
             this.dgViewSanPhamCuaHang.ReadOnly = true;
+            this.dgViewSanPhamCuaHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgViewSanPhamCuaHang.Size = new System.Drawing.Size(482, 311);
             this.dgViewSanPhamCuaHang.TabIndex = 4;
+            this.dgViewSanPhamCuaHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSanPhamCuaHang_CellClick);
+            this.dgViewSanPhamCuaHang.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewSanPhamCuaHang_DataBindingComplete);
             // 
             // toolStrip3
             // 
@@ -132,16 +137,18 @@
             // 
             // dgViewMaVachSanPham
             // 
-            this.dgViewMaVachSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgViewMaVachSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewMaVachSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgViewMaVachSanPham.Location = new System.Drawing.Point(0, 25);
-            this.dgViewMaVachSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgViewMaVachSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgViewMaVachSanPham.MultiSelect = false;
             this.dgViewMaVachSanPham.Name = "dgViewMaVachSanPham";
             this.dgViewMaVachSanPham.ReadOnly = true;
+            this.dgViewMaVachSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgViewMaVachSanPham.Size = new System.Drawing.Size(680, 311);
             this.dgViewMaVachSanPham.TabIndex = 5;
+            this.dgViewMaVachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMaVachSanPham_CellClick);
+            this.dgViewMaVachSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVachSanPham_DataBindingComplete);
             // 
             // toolStrip4
             // 
@@ -162,7 +169,7 @@
             this.Controls.Add(this.dgViewSanPham);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDanhMucSP";
             this.Text = "DanhMucSp";
             this.toolStrip1.ResumeLayout(false);

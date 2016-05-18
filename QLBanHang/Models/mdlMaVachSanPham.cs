@@ -14,16 +14,20 @@ namespace QLBanHang.Models
         ConnectToSQL _conn = new ConnectToSQL();//Initialize connectoSQl class
 
 
-        public DataTable GetData(int idCuaHang = 9)
+        public DataTable GetData(int idCuaHang = 9,int idSanPham = 0)
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("SELECT tbMaVachSanPham.id,tbMaVachSanPham.MaVach,dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
-	                                +",tbSanPham.TenSanPham,tbSanPham.DonVi,tbMaVachSanPham.SoLuong,tbMaVachSanPham.GiaBan,tbNhaSanXuat.TenNhaSanxuat,TenLoaiSanPham as LoaiSanPham,tbNganhSanPham.TenNganhSanPham,tbNhaCungCap.TenNhaCungCap "
+	                                +",tbSanPham.TenSanPham,DonVi,SoLuong,GiaBan,GiaSi,GiaNhap,tbNhaSanXuat.TenNhaSanxuat,TenLoaiSanPham as LoaiSanPham,tbNganhSanPham.TenNganhSanPham,tbNhaCungCap.TenNhaCungCap "
                                     +"from tbNhaSanXuat,tbSanPham,tbLoaiSanPham,tbNganhSanPham,tbMaVachSanPham,tbSanPhamCuaHang,tbNhaCungCap "
                                     +"where tbNhaSanXuat.id = tbSanPham.idNhaSanXuat and tbLoaiSanPham.id = tbSanPham.idLoaiSanPham and tbLoaiSanPham.idNganhSanPham = tbNganhSanPham.id "
 	                                +"and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham and tbSanPhamCuaHang.idCuaHang = '{0}' "
 	                                +"and tbMaVachSanPham.SuDung = '1' "
-	                                +"and tbNhaCungCap.id = tbMaVachSanPham.idNhaCungCap",idCuaHang);
+	                                +"and tbNhaCungCap.id = tbMaVachSanPham.idNhaCungCap ",idCuaHang);
+            if (idSanPham != 0)
+            {
+                _conn.CMD.CommandText += String.Format("and idSanPham = '{0}' ",idSanPham);
+            }
             _conn.FillData(table);
             return table;
         }

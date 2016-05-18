@@ -29,6 +29,23 @@ namespace QLBanHang.Models
             return table;
         }
 
+        public DataTable GetThongTinByIdSanPham(int idSanPham)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format(
+                "SELECT distinct(tbCuaHang.id),dbo.tbNhaSanXuat.MaNhaSanXuat "
+                +" + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
+                    +",tbCuaHang.MaCuaHang +'/' +tbCuaHang.TenCuaHang, "
+                    +"tbSanPham.TenSanPham "
+                    +"from tbSanPham,tbNhaSanXuat ,tbSanPhamCuaHang,tbCuaHang,tbMaVachSanPham "
+                    +"where tbNhaSanXuat.id = tbSanPham.idNhaSanXuat "
+				        +"and tbSanPham.id = tbSanPhamCuaHang.idSanPham "
+				        +"and tbCuaHang.id = tbSanPhamCuaHang.idCuaHang "
+				        +"and tbSanPham.id = '{0}'",idSanPham);
+            _conn.FillData(table);
+            return table;
+        }
+
         public bool AddData(clsSanPhamCuaHang sanPhamCuaHang)
         { 
              _conn.CMD.CommandText = String.Format("INSERT tbSanPhamCuaHang (idCuaHang,idSanPham) VALUES('{0}','{1}')",
@@ -74,5 +91,6 @@ namespace QLBanHang.Models
             _conn.CMD.CommandText = String.Format("delete tbSanPhamCuaHang where idCuaHang = '{0}')",idCuaHang);
             return _conn.ExecuteCMD();
         }
+
     }
 }

@@ -13,9 +13,9 @@ namespace QLBanHang.Controls
     {
         mdlMaVachSanPham _mdlMaVachSanPham = new mdlMaVachSanPham();
 
-        public DataTable GetData(int idCuaHang)
+        public DataTable GetData(int idCuaHang,int idSanPham = 0)
         {
-            return _mdlMaVachSanPham.GetData(idCuaHang);
+            return _mdlMaVachSanPham.GetData(idCuaHang,idSanPham);
         }
 
         public int GetIdByMaVach(string maVach)

@@ -21,5 +21,11 @@ namespace QLBanHang.Controls
         {
             return _mdlSanPhamCuaHang.AddSanPhamVaoCuaHang(idCuaHang);
         }
+
+        public DataTable GetThongTinByIdSanPham(int idSanPham)
+        {
+            return _mdlSanPhamCuaHang.GetThongTinByIdSanPham(idSanPham);
+        }
+
     }
 }
