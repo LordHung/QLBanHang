@@ -64,11 +64,14 @@ namespace QLBanHang.Views
         FrmNhapKho _FrmNhapKho = new FrmNhapKho();
         //Xuất kho
         FrmXuatKho _FrmXuatKho = new FrmXuatKho();
+        //Chuyển kho
+        FrmChuyenKho _FrmChuyenKho = new FrmChuyenKho();
 
         enum DisplayFlag
         {
             BanHang,
             DatHang,
+            ChuyenKho,
             NhapKho,
             XuatKho,
             ThongKe
@@ -103,6 +106,7 @@ namespace QLBanHang.Views
             LoadNhapKhoController();
             LoadXuatKhoController();
             LoadThongKeController();
+            LoadChuyenKhoController();
         }
 
         private void LoadBanHangController()
@@ -138,6 +142,13 @@ namespace QLBanHang.Views
             _FrmThongKeHoaDon.MdiParent = this;
             _FrmThongKeHoaDon.Dock = DockStyle.Fill;
             _FrmThongKeHoaDon.Show();
+        }
+
+        private void LoadChuyenKhoController()
+        {
+            _FrmChuyenKho.MdiParent = this;
+            _FrmChuyenKho.Dock = DockStyle.Fill;
+            _FrmChuyenKho.Show();
         }
         /// <summary>
         #region ToolMenuStripItem Click
@@ -201,6 +212,12 @@ namespace QLBanHang.Views
             DisplayForm();
         }
 
+        private void btnChuyenKho_Click(object sender, EventArgs e)
+        {
+            _displayFlag = DisplayFlag.ChuyenKho;
+            DisplayForm();
+        }
+
         private void btnXuatKho_Click(object sender, EventArgs e)
         {
             _displayFlag = DisplayFlag.XuatKho;
@@ -239,6 +256,10 @@ namespace QLBanHang.Views
                     _FrmDatHang.BringToFront();
                     this.Invalidate();
                     break;
+                case DisplayFlag.ChuyenKho:
+                    _FrmChuyenKho.BringToFront();
+                    this.Invalidate();
+                    break;
                 case DisplayFlag.NhapKho:
                       _FrmNhapKho.BringToFront();
                     this.Invalidate();
@@ -270,6 +291,8 @@ namespace QLBanHang.Views
 
             btnThongKe.BackColor = panel1.BackColor;
 
+            btnChuyenKho.BackColor = panel1.BackColor;
+
             switch (_displayFlag)
             {
                 case DisplayFlag.BanHang:
@@ -277,6 +300,9 @@ namespace QLBanHang.Views
                     break;
                 case DisplayFlag.DatHang:
                     btnDatHang.BackColor = GlobalValues.BackGroundMenu_SelectedColor;
+                    break;
+                case DisplayFlag.ChuyenKho:
+                    btnChuyenKho.BackColor = GlobalValues.BackGroundMenu_SelectedColor;
                     break;
                 case DisplayFlag.NhapKho:
                     btnNhapKho.BackColor = GlobalValues.BackGroundMenu_SelectedColor;
@@ -320,7 +346,14 @@ namespace QLBanHang.Views
             btnThongKe.FlatStyle = FlatStyle.Flat;
             btnThongKe.FlatAppearance.BorderColor = panel1.BackColor;
             btnThongKe.FlatAppearance.BorderSize = 0;
+
+            btnChuyenKho.TabStop = false;
+            btnChuyenKho.FlatStyle = FlatStyle.Flat;
+            btnChuyenKho.FlatAppearance.BorderColor = panel1.BackColor;
+            btnChuyenKho.FlatAppearance.BorderSize = 0;
         }
+
+      
 
     
 

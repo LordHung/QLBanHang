@@ -50,9 +50,9 @@ namespace QLBanHang.Controls
         /// Lấy ra mã vạch sản phẩm dựa trên idMaVach
         /// </summary>
 
-        public DataTable GetRowMaVachSanPham(int idMaVachSanPham)
+        public DataTable GetRowMaVachSanPham(int idCuaHang, int idMaVachSanPham)
         {
-            return _mdlMaVachSanPham.GetRowMaVachSanPham(idMaVachSanPham);
+            return _mdlMaVachSanPham.GetRowMaVachSanPham(idCuaHang, idMaVachSanPham);
         }
         ///
         ///Lấy tất cả dữ liệu liên quan đến MaVach
@@ -131,27 +131,36 @@ namespace QLBanHang.Controls
         }
 
         /// <summary>
-        /// DeleteData
+        /// Kiểm tra xem có mã vạch đó tại cửa hàng khác hay ko
         /// </summary>
-        /// <param name="idSanPham"></param>
+        /// <param name="maVachSanPham"></param>
+        /// <param name="idCuaHangDen"></param>
         /// <returns></returns>
-        //public bool DeleteData(int idSanPham)
-        //{
-        //    DialogResult result = MessageBox.Show("Xác nhận xóa sản phẩm "
-        //   + " ?", "Xác nhận",
-        //                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        //    if (result == DialogResult.No) return false;
-        //    ///them hoa don
+        public bool IsExist(string maVachSanPham, int idCuaHang)
+        {
+            return _mdlMaVachSanPham.IsExist(maVachSanPham, idCuaHang);
+        }
 
-        //    if (_mdlSanPham.DeleletDataById(idSanPham))
-        //    {
-        //        _viewSanPham.UpdateView();
-        //        return true;
-        //    }
-        //    else
-        //        MessageBox.Show("Xóa thất bại", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    
+        /// <summary>
+        /// Lấy id từ cuahang và mavach
+        /// </summary>
+        /// <param name="maVachSanPham"></param>
+        /// <param name="idCuaHangDen"></param>
+        /// <returns></returns>
+        public int GetIdByCuaHang_MaVach(string maVachSanPham, int idCuaHang)
+        {
+            return _mdlMaVachSanPham.GetIdByCuaHang_MaVach(maVachSanPham, idCuaHang);
+        }
+        /// <summary>
+        /// Lấy mã vạch từ id
+        /// </summary>
+        /// <param name="idMaVach"></param>
+        /// <returns></returns>
 
-        //    return false;
-        //}
+        public string GetMaVachById(int idMaVach)
+        {
+            return _mdlMaVachSanPham.GetMaVachById(idMaVach);
+        }
     }
 }

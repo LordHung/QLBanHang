@@ -42,14 +42,14 @@ namespace QLBanHang.Controls
             _viewDonDatHang = view;
         }
 
-        public int GenerateNewDonDatHang(DateTime date)
+        public int GenerateNewSoDonDatHang(DateTime date)
         {
             return _mdlDonDatHang.GenerateNewDonDatHang(date.ToString("yyyy-MM-dd"));
         }
 
         public int GetNewSoDonDatHangByNow()
         {
-            return this.GenerateNewDonDatHang(DateTime.Now);
+            return this.GenerateNewSoDonDatHang(DateTime.Now);
         }
 
         public int GetIdDonDatHang()

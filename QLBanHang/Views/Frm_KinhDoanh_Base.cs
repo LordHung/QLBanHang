@@ -45,7 +45,9 @@ namespace QLBanHang.Views
 
         ctrlCuaHang _ctrlCuaHang = new ctrlCuaHang();
 
+        protected ctrlMaVachSanPham _ctrlMaVachSanPham = new ctrlMaVachSanPham();
 
+        protected DataTable _maVachDT = new DataTable();
 
         //private void AlterDgViewMaVachDatHang()
         //{
@@ -76,8 +78,13 @@ namespace QLBanHang.Views
         }
 
 
-        protected  virtual void LoadMaVachSanPham()
-        { 
+        protected  void LoadMaVachSanPham()
+        {
+            _maVachDT = new DataTable();
+
+            _maVachDT = _ctrlMaVachSanPham.GetData(_idCuaHang);
+
+            dgViewMaVach.DataSource = _maVachDT;
         }
 
         protected virtual void tSBtnChonMaVach_Click(object sender, EventArgs e)
@@ -117,6 +124,10 @@ namespace QLBanHang.Views
         {
 
         }
+        ///
+        ///ChonSanPham
+        ///
+
 
         /// 
         /// Tăng số lượng sản phẩm đã được chọn
@@ -174,57 +185,57 @@ namespace QLBanHang.Views
 
         private void dgViewMaVach_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
-
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
-
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            ImprovePerfomance.RowPostPaint(sender, e, this);
         }
 
         private void dgViewMaVach_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            ///Dữ liệu có chung trên tất cả các datagridview kế thừa từ this
             dgViewMaVach.Columns["id"].Visible = false;
-
+            ///MaVach
             dgViewMaVach.Columns["MaVach"].HeaderText = "Mã Vạch";
             dgViewMaVach.Columns["MaVach"].DefaultCellStyle.ForeColor = Color.Red;
             dgViewMaVach.Columns["MaVach"].Width = 150;
-
+            ///MaSanPham
             dgViewMaVach.Columns["MaSanPham"].HeaderText = "Mã Sản Phẩm";
             dgViewMaVach.Columns["MaSanPham"].Width = 150;
-
+            ///TenSanPham
             dgViewMaVach.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";
             dgViewMaVach.Columns["TenSanPham"].DefaultCellStyle.ForeColor = Color.Blue;
             dgViewMaVach.Columns["TenSanPham"].Width = 150;
-
+            //SoLuong
             dgViewMaVach.Columns["SoLuong"].HeaderText = "SL";
             dgViewMaVach.Columns["SoLuong"].DefaultCellStyle.ForeColor = Color.Blue;
             dgViewMaVach.Columns["SoLuong"].DefaultCellStyle.BackColor = Color.Yellow;
             dgViewMaVach.Columns["SoLuong"].Width = 60;
-
-            dgViewMaVach.Columns["LoaiSanPham"].HeaderText = "Loại Sản Phẩm";
-            dgViewMaVach.Columns["LoaiSanPham"].Width = 150;
-
+            //DonVi
+            dgViewMaVach.Columns["DonVi"].HeaderText = "Đơn Vị";
+            dgViewMaVach.Columns["DonVi"].Width = 100;
+            //TenNhaSanXuat
             dgViewMaVach.Columns["TenNhaSanxuat"].HeaderText = "Nhà Sản Xuất";
             dgViewMaVach.Columns["TenNhaSanxuat"].Width = 150;
-
+            ///NganhSanPham
             dgViewMaVach.Columns["TenNganhSanPham"].HeaderText = "Ngành Sản Phẩm";
             dgViewMaVach.Columns["TenNganhSanPham"].Width = 150;
-
+            //LoaiSanPham
+            dgViewMaVach.Columns["LoaiSanPham"].HeaderText = "Loại Sản Phẩm";
+            dgViewMaVach.Columns["LoaiSanPham"].Width = 150;
+            //TenNhaCungCap
             dgViewMaVach.Columns["TenNhaCungCap"].HeaderText = "Nhà Cung Cấp";
             dgViewMaVach.Columns["TenNhaCungCap"].Width = 150;
-
+            ///GiaBan
             dgViewMaVach.Columns["GiaBan"].HeaderText = "Giá Bán";
             dgViewMaVach.Columns["GiaBan"].DefaultCellStyle.ForeColor = Color.Green;
             dgViewMaVach.Columns["GiaBan"].Width = 100;
 
+            //Dùng cho từng Form riêng biệt
+            UpdateCustomDataGridView();
+
         }
+
+        protected virtual void UpdateCustomDataGridView()
+        { }
+
 
         private void dgViewMaVachDaChon_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

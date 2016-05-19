@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using QLBanHang.Objects;
 using System.Windows.Forms;
 
-
 namespace QLBanHang.Models
 {
     class mdlChiTietPhieuNhap
@@ -29,7 +28,6 @@ namespace QLBanHang.Models
       
             return _conn.ExecuteCMD();
         }
-
 
     }
 }

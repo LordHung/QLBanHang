@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ctrlChiTietChuyenHang.cs" />
     <Compile Include="Controls\ctrlChiTietDonDatHang.cs" />
     <Compile Include="Controls\ctrlChiTietHoaDon.cs" />
     <Compile Include="Controls\ctrlChiTietPhieuNhap.cs" />
     <Compile Include="Controls\ctrlChiTietPhieuXuat.cs" />
+    <Compile Include="Controls\ctrlChuyenHang.cs" />
     <Compile Include="Controls\ctrlCuaHang.cs" />
     <Compile Include="Controls\ctrlDangNhap.cs" />
     <Compile Include="Controls\ctrlDonDatHang.cs" />
@@ -95,6 +97,9 @@
     <Compile Include="Models\mdlSanPhamCuaHang.cs" />
     <Compile Include="Models\mdlThuNoKhachHang.cs" />
     <Compile Include="Models\mdlTraNoNhaCungCap.cs" />
+    <Compile Include="Models\mdlChiTietChuyenHang.cs" />
+    <Compile Include="Models\mdlChuyenHang.cs" />
+    <Compile Include="Objects\clsChiTietChuyenHang.cs" />
     <Compile Include="Objects\clsChiTietDonDatHang.cs" />
     <Compile Include="Objects\clsChiTietHoaDon.cs" />
     <Compile Include="Objects\clsChiTietPhieuNhap.cs" />

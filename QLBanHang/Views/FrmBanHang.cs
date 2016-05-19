@@ -28,7 +28,7 @@ namespace QLBanHang.Views
         ///
         /// dùng để hiển thị các sản phẩm bán được tại cửa hàng
         ///
-        ctrlMaVachSanPham _ctrlMaVachSanPham = new ctrlMaVachSanPham();
+
 
         ctrlKhachHang _ctrlKhachHang = new ctrlKhachHang();
 
@@ -47,7 +47,8 @@ namespace QLBanHang.Views
         /// 
         /// DataTable dùng để thao tác dữ liệu trên 2 datagridview chính
         /// 
-        DataTable _maVachDT = new DataTable();
+        //DataTable _maVachDT = new DataTable();
+        //ctrlMaVachSanPham _ctrlMaVachSanPham = new ctrlMaVachSanPham();
 
         DataTable _maVachBanHangDT = new DataTable();
         ///
@@ -90,16 +91,16 @@ namespace QLBanHang.Views
         /// <summary>
         /// Load Mã vạch sản phẩm lê dgViewMaVach
         /// </summary>
-        protected override void LoadMaVachSanPham()
-        {
-            _maVachDT = new DataTable();
+        //protected override void LoadMaVachSanPham()
+        //{
+        //    _maVachDT = new DataTable();
 
-            _maVachDT = _ctrlMaVachSanPham.GetData(_idCuaHang);
+        //    _maVachDT = _ctrlMaVachSanPham.GetData(_idCuaHang);
 
-            dgViewMaVach.DataSource = _maVachDT;
+        //    dgViewMaVach.DataSource = _maVachDT;
 
-       
-        }
+
+        //}
 
 
         /// 
@@ -206,7 +207,7 @@ namespace QLBanHang.Views
             ///Lấy mã vạch từ mavachdgView
             int idMaVachSanPham = Convert.ToInt32(dgViewMaVach.CurrentRow.Cells[0].Value.ToString());
             ///Lấy dữ liệu mã vạch từ database 
-            DataRow row = _ctrlMaVachSanPham.GetRowMaVachSanPham(idMaVachSanPham).Rows[0];
+            DataRow row =  _ctrlMaVachSanPham.GetRowMaVachSanPham(_idCuaHang,idMaVachSanPham).Rows[0];
             //.copy dữ liệu vào _mavachDuowcCHon
             if (!PlusSelectedMaVach(idMaVachSanPham, _maVachBanHangDT) && Convert.ToInt32(row["SoLuong"].ToString()) > 0)
             {
@@ -433,7 +434,15 @@ namespace QLBanHang.Views
                 return;
             e.Value = _maVachDT.Rows[e.RowIndex][e.ColumnIndex];
         }
-
-       
+    ///Support cho hàm custom datagridview hiển thị dữ liệu khác nhau trên từng Form
+        protected override void UpdateCustomDataGridView()
+        {
+            dgViewMaVach.Columns["GiaSi"].Visible = false;
+            //GiaNhap
+            dgViewMaVach.Columns["GiaNhap"].Visible = false;
+            //GiaBan
+            dgViewMaVach.Columns["GiaBan"].HeaderText = "Giá Bán";
+            dgViewMaVach.Columns["GiaBan"].DefaultCellStyle.ForeColor = Color.Red;
+        }
     }
 }

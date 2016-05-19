@@ -31,16 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
-            this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoaDonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageListToolStripMenuItems = new System.Windows.Forms.ImageList(this.components);
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnXuatKho = new System.Windows.Forms.Button();
-            this.btnNhapKho = new System.Windows.Forms.Button();
-            this.btnDatHang = new System.Windows.Forms.Button();
-            this.btnBanHang = new System.Windows.Forms.Button();
             this.heThongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thayDoiMatKhauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +45,17 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.khachHangNhaCungCapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thuChiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoaDonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnDatHang = new System.Windows.Forms.Button();
+            this.btnBanHang = new System.Windows.Forms.Button();
+            this.imageListToolStripMenuItems = new System.Windows.Forms.ImageList(this.components);
+            this.btnChuyenKho = new System.Windows.Forms.Button();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnXuatKho = new System.Windows.Forms.Button();
+            this.btnNhapKho = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,142 +73,6 @@
             this.menuStripMain.Size = new System.Drawing.Size(1129, 25);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
-            // 
-            // thongKeToolStripMenuItem
-            // 
-            this.thongKeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hoaDonToolStripMenuItem});
-            this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
-            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
-            this.thongKeToolStripMenuItem.Text = "Thống kê";
-            // 
-            // hoaDonToolStripMenuItem
-            // 
-            this.hoaDonToolStripMenuItem.Name = "hoaDonToolStripMenuItem";
-            this.hoaDonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.hoaDonToolStripMenuItem.Text = "Hóa đơn";
-            this.hoaDonToolStripMenuItem.Click += new System.EventHandler(this.hoaDonToolStripMenuItem_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.btnThongKe);
-            this.panel1.Controls.Add(this.btnXuatKho);
-            this.panel1.Controls.Add(this.btnNhapKho);
-            this.panel1.Controls.Add(this.btnDatHang);
-            this.panel1.Controls.Add(this.btnBanHang);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 657);
-            this.panel1.TabIndex = 2;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "sale-icon.png");
-            this.imageList1.Images.SetKeyName(1, "ordering-icon.png");
-            this.imageList1.Images.SetKeyName(2, "Stock-Index-Down-icon.png");
-            this.imageList1.Images.SetKeyName(3, "Stock Index Up.png");
-            this.imageList1.Images.SetKeyName(4, "Bar Graph.ico");
-            // 
-            // imageListToolStripMenuItems
-            // 
-            this.imageListToolStripMenuItems.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListToolStripMenuItems.ImageStream")));
-            this.imageListToolStripMenuItems.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListToolStripMenuItems.Images.SetKeyName(0, "applications_system.png");
-            this.imageListToolStripMenuItems.Images.SetKeyName(1, "Custom-Icon-Design-Pretty-Office-11-Logout.ico");
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Azure;
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.ImageIndex = 4;
-            this.btnThongKe.ImageList = this.imageList1;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 268);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(200, 67);
-            this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "THỐNG KÊ";
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnXuatKho
-            // 
-            this.btnXuatKho.BackColor = System.Drawing.Color.Azure;
-            this.btnXuatKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXuatKho.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXuatKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXuatKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatKho.ImageIndex = 3;
-            this.btnXuatKho.ImageList = this.imageList1;
-            this.btnXuatKho.Location = new System.Drawing.Point(0, 201);
-            this.btnXuatKho.Name = "btnXuatKho";
-            this.btnXuatKho.Size = new System.Drawing.Size(200, 67);
-            this.btnXuatKho.TabIndex = 4;
-            this.btnXuatKho.Text = "XUẤT KHO";
-            this.btnXuatKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXuatKho.UseVisualStyleBackColor = false;
-            this.btnXuatKho.Click += new System.EventHandler(this.btnXuatKho_Click);
-            // 
-            // btnNhapKho
-            // 
-            this.btnNhapKho.BackColor = System.Drawing.Color.Azure;
-            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhapKho.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNhapKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhapKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapKho.ImageIndex = 2;
-            this.btnNhapKho.ImageList = this.imageList1;
-            this.btnNhapKho.Location = new System.Drawing.Point(0, 134);
-            this.btnNhapKho.Name = "btnNhapKho";
-            this.btnNhapKho.Size = new System.Drawing.Size(200, 67);
-            this.btnNhapKho.TabIndex = 3;
-            this.btnNhapKho.Text = "NHẬP KHO";
-            this.btnNhapKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapKho.UseVisualStyleBackColor = false;
-            this.btnNhapKho.Click += new System.EventHandler(this.btnNhapKho_Click);
-            // 
-            // btnDatHang
-            // 
-            this.btnDatHang.BackColor = System.Drawing.Color.Cyan;
-            this.btnDatHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDatHang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatHang.ImageIndex = 1;
-            this.btnDatHang.ImageList = this.imageList1;
-            this.btnDatHang.Location = new System.Drawing.Point(0, 67);
-            this.btnDatHang.Name = "btnDatHang";
-            this.btnDatHang.Size = new System.Drawing.Size(200, 67);
-            this.btnDatHang.TabIndex = 2;
-            this.btnDatHang.Text = "ĐẶT HÀNG";
-            this.btnDatHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDatHang.UseVisualStyleBackColor = false;
-            this.btnDatHang.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnBanHang
-            // 
-            this.btnBanHang.BackColor = System.Drawing.Color.Azure;
-            this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBanHang.ImageIndex = 0;
-            this.btnBanHang.ImageList = this.imageList1;
-            this.btnBanHang.Location = new System.Drawing.Point(0, 0);
-            this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(200, 67);
-            this.btnBanHang.TabIndex = 0;
-            this.btnBanHang.Text = "BÁN HÀNG";
-            this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBanHang.UseVisualStyleBackColor = false;
-            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
             // heThongToolStripMenuItem
             // 
@@ -322,6 +187,162 @@
             this.thuChiToolStripMenuItem.Text = "Thu Chi";
             this.thuChiToolStripMenuItem.Click += new System.EventHandler(this.thuChiToolStripMenuItem_Click);
             // 
+            // thongKeToolStripMenuItem
+            // 
+            this.thongKeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hoaDonToolStripMenuItem});
+            this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
+            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
+            this.thongKeToolStripMenuItem.Text = "Thống kê";
+            // 
+            // hoaDonToolStripMenuItem
+            // 
+            this.hoaDonToolStripMenuItem.Name = "hoaDonToolStripMenuItem";
+            this.hoaDonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.hoaDonToolStripMenuItem.Text = "Hóa đơn";
+            this.hoaDonToolStripMenuItem.Click += new System.EventHandler(this.hoaDonToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.btnThongKe);
+            this.panel1.Controls.Add(this.btnXuatKho);
+            this.panel1.Controls.Add(this.btnNhapKho);
+            this.panel1.Controls.Add(this.btnChuyenKho);
+            this.panel1.Controls.Add(this.btnDatHang);
+            this.panel1.Controls.Add(this.btnBanHang);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 657);
+            this.panel1.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "sale-icon.png");
+            this.imageList1.Images.SetKeyName(1, "ordering-icon.png");
+            this.imageList1.Images.SetKeyName(2, "0794fc3a-4ec0-4d5d-b55b-60fb75d5fed7.png");
+            this.imageList1.Images.SetKeyName(3, "Stock-Index-Down-icon.png");
+            this.imageList1.Images.SetKeyName(4, "Stock Index Up.png");
+            this.imageList1.Images.SetKeyName(5, "Bar Graph.ico");
+            // 
+            // btnDatHang
+            // 
+            this.btnDatHang.BackColor = System.Drawing.Color.Cyan;
+            this.btnDatHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDatHang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatHang.ImageIndex = 1;
+            this.btnDatHang.ImageList = this.imageList1;
+            this.btnDatHang.Location = new System.Drawing.Point(0, 67);
+            this.btnDatHang.Name = "btnDatHang";
+            this.btnDatHang.Size = new System.Drawing.Size(200, 67);
+            this.btnDatHang.TabIndex = 1;
+            this.btnDatHang.Text = "ĐẶT HÀNG";
+            this.btnDatHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDatHang.UseVisualStyleBackColor = false;
+            this.btnDatHang.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnBanHang
+            // 
+            this.btnBanHang.BackColor = System.Drawing.Color.Azure;
+            this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanHang.ImageIndex = 0;
+            this.btnBanHang.ImageList = this.imageList1;
+            this.btnBanHang.Location = new System.Drawing.Point(0, 0);
+            this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.Size = new System.Drawing.Size(200, 67);
+            this.btnBanHang.TabIndex = 0;
+            this.btnBanHang.Text = "BÁN HÀNG";
+            this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBanHang.UseVisualStyleBackColor = false;
+            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
+            // 
+            // imageListToolStripMenuItems
+            // 
+            this.imageListToolStripMenuItems.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListToolStripMenuItems.ImageStream")));
+            this.imageListToolStripMenuItems.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListToolStripMenuItems.Images.SetKeyName(0, "applications_system.png");
+            this.imageListToolStripMenuItems.Images.SetKeyName(1, "Custom-Icon-Design-Pretty-Office-11-Logout.ico");
+            // 
+            // btnChuyenKho
+            // 
+            this.btnChuyenKho.BackColor = System.Drawing.Color.Azure;
+            this.btnChuyenKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChuyenKho.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChuyenKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChuyenKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChuyenKho.ImageIndex = 2;
+            this.btnChuyenKho.ImageList = this.imageList1;
+            this.btnChuyenKho.Location = new System.Drawing.Point(0, 134);
+            this.btnChuyenKho.Name = "btnChuyenKho";
+            this.btnChuyenKho.Size = new System.Drawing.Size(200, 67);
+            this.btnChuyenKho.TabIndex = 2;
+            this.btnChuyenKho.Text = "CHUYỂN KHO";
+            this.btnChuyenKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChuyenKho.UseVisualStyleBackColor = false;
+            this.btnChuyenKho.Click += new System.EventHandler(this.btnChuyenKho_Click);
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.Azure;
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.ImageIndex = 5;
+            this.btnThongKe.ImageList = this.imageList1;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 335);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(200, 67);
+            this.btnThongKe.TabIndex = 10;
+            this.btnThongKe.Text = "THỐNG KÊ";
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnXuatKho
+            // 
+            this.btnXuatKho.BackColor = System.Drawing.Color.Azure;
+            this.btnXuatKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnXuatKho.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXuatKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatKho.ImageIndex = 4;
+            this.btnXuatKho.ImageList = this.imageList1;
+            this.btnXuatKho.Location = new System.Drawing.Point(0, 268);
+            this.btnXuatKho.Name = "btnXuatKho";
+            this.btnXuatKho.Size = new System.Drawing.Size(200, 67);
+            this.btnXuatKho.TabIndex = 9;
+            this.btnXuatKho.Text = "XUẤT KHO";
+            this.btnXuatKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXuatKho.UseVisualStyleBackColor = false;
+            this.btnXuatKho.Click += new System.EventHandler(this.btnXuatKho_Click);
+            // 
+            // btnNhapKho
+            // 
+            this.btnNhapKho.BackColor = System.Drawing.Color.Azure;
+            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhapKho.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNhapKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhapKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapKho.ImageIndex = 3;
+            this.btnNhapKho.ImageList = this.imageList1;
+            this.btnNhapKho.Location = new System.Drawing.Point(0, 201);
+            this.btnNhapKho.Name = "btnNhapKho";
+            this.btnNhapKho.Size = new System.Drawing.Size(200, 67);
+            this.btnNhapKho.TabIndex = 8;
+            this.btnNhapKho.Text = "NHẬP KHO";
+            this.btnNhapKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapKho.UseVisualStyleBackColor = false;
+            this.btnNhapKho.Click += new System.EventHandler(this.btnNhapKho_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,10 +388,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDatHang;
         private System.Windows.Forms.Button btnBanHang;
-        private System.Windows.Forms.Button btnNhapKho;
-        private System.Windows.Forms.Button btnXuatKho;
-        private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageListToolStripMenuItems;
+        private System.Windows.Forms.Button btnChuyenKho;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnXuatKho;
+        private System.Windows.Forms.Button btnNhapKho;
     }
 }

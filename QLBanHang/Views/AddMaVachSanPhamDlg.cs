@@ -44,6 +44,7 @@ namespace QLBanHang.Views
         {
             txtNgayTao.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
             LoadNhaCungCap();
+            ckSuDung.Checked = true;
         }
 
         /// 

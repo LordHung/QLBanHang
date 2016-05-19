@@ -36,7 +36,7 @@ namespace QLBanHang.Views
         ///
         /// dùng để hiển thị các sản phẩm bán được tại cửa hàng
         ///
-        ctrlMaVachSanPham _ctrlMaVachSanPham = new ctrlMaVachSanPham();
+        //ctrlMaVachSanPham _ctrlMaVachSanPham = new ctrlMaVachSanPham();
 
         ctrlKhachHang _ctrlKhachHang = new ctrlKhachHang();
 
@@ -46,7 +46,7 @@ namespace QLBanHang.Views
         /// 
         /// DataTable dùng để thao tác dữ liệu trên 2 datagridview chính
         /// 
-        DataTable _maVachDT = new DataTable();
+        //DataTable _maVachDT = new DataTable();
 
         DataTable _maVachXuatKhoDT = new DataTable();
 
@@ -125,23 +125,6 @@ namespace QLBanHang.Views
             tSTxtMain.Text = "Xuất kho";
         }
 
-        /// <summary>
-        /// Load Mã vạch sản phẩm lê dgViewMaVach
-        /// </summary>
-        protected override void LoadMaVachSanPham()
-        {
-            _maVachDT = new DataTable();
-
-            _maVachDT = _ctrlMaVachSanPham.GetData(_idCuaHang);
-
-            dgViewMaVach.DataSource = _maVachDT;
-
-            dgViewMaVach.Columns["MaVach"].DefaultCellStyle.ForeColor = Color.Red;
-            dgViewMaVach.Columns["TenSanPham"].DefaultCellStyle.ForeColor = Color.Blue;
-            dgViewMaVach.Columns["SoLuong"].DefaultCellStyle.ForeColor = Color.Blue;
-            dgViewMaVach.Columns["SoLuong"].DefaultCellStyle.BackColor = Color.Yellow;
-            dgViewMaVach.Columns["GiaBan"].DefaultCellStyle.ForeColor = Color.Green;
-        }
 
 
         /// 
@@ -340,7 +323,7 @@ namespace QLBanHang.Views
             AlterDgViewMaVachNhapKho();
             int idMaVachSanPham = Convert.ToInt32(dgViewMaVach.CurrentRow.Cells[0].Value.ToString());
             ///Lấy dữ liệu mã vạch từ database 
-            DataRow row = _ctrlMaVachSanPham.GetRowMaVachSanPham(idMaVachSanPham).Rows[0];
+            DataRow row = _ctrlMaVachSanPham.GetRowMaVachSanPham(_idCuaHang, idMaVachSanPham).Rows[0];
             //.copy dữ liệu vào _mavachDuowcCHon
             if (!PlusSelectedMaVach(idMaVachSanPham, _maVachXuatKhoDT))
             {
@@ -537,7 +520,11 @@ namespace QLBanHang.Views
                 return;
             }
 
-            if (AddPhieuXuat())
+            if (!AddPhieuXuat())
+            {
+                return;
+            }
+            else
             {
                 //dgViewMaVachDaChon.DataSource = null;
                 AddChiTietPhieuXuat();
@@ -616,6 +603,17 @@ namespace QLBanHang.Views
             _idPhieuChuyen = 0;
             tsTxtMaPhieuChuyen.TextBox.Text = "";
             EnableItems();
+        }
+
+
+        ///Support cho hàm custom datagridview hiển thị dữ liệu khác nhau trên từng Form
+        protected override void UpdateCustomDataGridView()
+        {
+            dgViewMaVach.Columns["GiaSi"].Visible = false;
+            dgViewMaVach.Columns["GiaBan"].Visible = false;
+
+            dgViewMaVach.Columns["GiaNhap"].HeaderText = "Giá Nhập";
+            dgViewMaVach.Columns["GiaNhap"].DefaultCellStyle.ForeColor = Color.Red;
         }
     }
 }

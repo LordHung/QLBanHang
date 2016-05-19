@@ -59,17 +59,17 @@ namespace QLBanHang.Models
             return Convert.ToInt32(table.Rows[0]["ID"].ToString());
         }
 
-        public DataTable GetRowMaVachSanPham(int id)
+        public DataTable GetRowMaVachSanPham(int idCuaHang,int idMaVachSanPham)
         {
             DataTable table = new DataTable();//Create template table to get data from database
             _conn.CMD.CommandText = String.Format("SELECT tbMaVachSanPham.id,dbo.tbNhaSanXuat.MaNhaSanXuat + REPLACE(STR(dbo.tbSanPham.CodeSanPham, 6), SPACE(1), '0') AS MaSanPham "
                                         + ",tbSanPham.TenSanPham,tbSanPham.DonVi,tbMaVachSanPham.SoLuong,tbMaVachSanPham.GiaBan,tbMaVachSanPham.GiaNhap,tbMaVachSanPham.VAT "
                                         +"from tbNhaSanXuat,tbSanPham,tbLoaiSanPham,tbNganhSanPham,tbMaVachSanPham,tbSanPhamCuaHang,tbNhaCungCap "
                                         +"where tbNhaSanXuat.id = tbSanPham.idNhaSanXuat and tbLoaiSanPham.id = tbSanPham.idLoaiSanPham and tbLoaiSanPham.idNganhSanPham = tbNganhSanPham.id "
-	                                    +"and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham and tbSanPhamCuaHang.idCuaHang = '9' "
+	                                    +"and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id and tbSanPham.id = tbSanPhamCuaHang.idSanPham and tbSanPhamCuaHang.idCuaHang = '{0}' "
 	                                    +"and tbMaVachSanPham.SuDung = '1' "
 	                                    +"and tbNhaCungCap.id = tbMaVachSanPham.idNhaCungCap "
-	                                    +"and tbMaVachSanPham.id = '{0}' ",id);
+	                                    +"and tbMaVachSanPham.id = '{1}' ",idCuaHang,idMaVachSanPham);
             _conn.FillData(table);
             return table;
         }
@@ -163,5 +163,40 @@ namespace QLBanHang.Models
             return _conn.ExecuteCMD();
         }
 
+        string layIdByCuaHang_MaVach = "select tbMaVachSanPham.id "
+            + "from tbMaVachSanPham,tbCuaHang,tbSanPhamCuaHang "
+            + "where MaVach = '{0}' and tbCuaHang.id = '{1}' "
+                    + "and tbMaVachSanPham.idSanPhamCuaHang = tbSanPhamCuaHang.id "
+                    + "and tbSanPhamCuaHang.idCuaHang = tbCuaHang.id";
+
+
+        public bool IsExist(string maVachSanPham,int idCuaHang)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format(layIdByCuaHang_MaVach,maVachSanPham,idCuaHang);
+            _conn.FillData(table);
+            return (table.Rows.Count > 0);
+        }
+
+        public int GetIdByCuaHang_MaVach(string maVachSanPham, int idCuaHang)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format(layIdByCuaHang_MaVach, maVachSanPham, idCuaHang);
+            _conn.FillData(table);
+            if (table.Rows.Count > 0)
+                return Convert.ToInt32(table.Rows[0]["id"].ToString());
+            else return 0;
+        }
+
+        public string GetMaVachById(int idMaVach)
+        {
+            DataTable table = new DataTable();//Create template table to get data from database
+            _conn.CMD.CommandText = String.Format("select MaVach "
+                    +"from tbMaVachSanPham where id =  '{0}' ",idMaVach); 
+            _conn.FillData(table);
+            if (table.Rows.Count > 0)
+                return table.Rows[0]["MaVach"].ToString();
+            else return null;
+        }
     }
 }

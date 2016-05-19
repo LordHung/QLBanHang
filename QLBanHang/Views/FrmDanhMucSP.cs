@@ -143,6 +143,7 @@ namespace QLBanHang.Views
             _maVachSanPhamDT = new DataTable();
             _maVachSanPhamDT = _ctrlMaVachSanPham.GetData(_idCuaHang, _idSanPhamCuaHang);
             dgViewMaVachSanPham.DataSource = _maVachSanPhamDT;
+            if (_maVachSanPhamDT.Rows.Count > 0)
             _idMaVachSanPham = Convert.ToInt32(dgViewMaVachSanPham.Rows[0].Cells[0].Value.ToString());
         }
 
