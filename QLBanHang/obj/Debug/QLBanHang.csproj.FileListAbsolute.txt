@@ -257,3 +257,6 @@ C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.csproj.Gen
 C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.DlgMaVachSanPhamBse.resources
 C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddMaVachSanPhamDlg.resources
 C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateMaVachSanPhamDlg.resources
+C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddMaVachSanPhamDlg.resources
+C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.DlgMaVachSanPhamBse.resources
+C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateMaVachSanPhamDlg.resources

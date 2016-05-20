@@ -36,12 +36,14 @@
             this.btnNhomHang = new System.Windows.Forms.Button();
             this.btnNganhHang = new System.Windows.Forms.Button();
             this.btnNhaSanXuat = new System.Windows.Forms.Button();
+            this.btnDanhMucSP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.btnDanhMucSP);
             this.panel1.Controls.Add(this.btnSanPham);
             this.panel1.Controls.Add(this.btnNhomHang);
             this.panel1.Controls.Add(this.btnNganhHang);
@@ -135,12 +137,31 @@
             this.btnNhaSanXuat.UseVisualStyleBackColor = false;
             this.btnNhaSanXuat.Click += new System.EventHandler(this.btnNhaSanXuat_Click);
             // 
+            // btnDanhMucSP
+            // 
+            this.btnDanhMucSP.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDanhMucSP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDanhMucSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhMucSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDanhMucSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDanhMucSP.ImageIndex = 1;
+            this.btnDanhMucSP.ImageList = this.imageList1;
+            this.btnDanhMucSP.Location = new System.Drawing.Point(0, 308);
+            this.btnDanhMucSP.Name = "btnDanhMucSP";
+            this.btnDanhMucSP.Size = new System.Drawing.Size(214, 77);
+            this.btnDanhMucSP.TabIndex = 4;
+            this.btnDanhMucSP.TabStop = false;
+            this.btnDanhMucSP.Text = "DANH MỤC SP";
+            this.btnDanhMucSP.UseVisualStyleBackColor = false;
+            this.btnDanhMucSP.Click += new System.EventHandler(this.btnDanhMucSP_Click);
+            // 
             // FormQLSNP_CTKM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 742);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "FormQLSNP_CTKM";
             this.Text = "FormQLSNP_CTKM";
@@ -158,5 +179,6 @@
         private System.Windows.Forms.Button btnNganhHang;
         private System.Windows.Forms.Button btnNhaSanXuat;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnDanhMucSP;
     }
 }

@@ -23,6 +23,8 @@ namespace QLBanHang.Views
 
         FrmSanPham _FrmSanPham = new FrmSanPham();
 
+        FrmDanhMucSP _FrmDanhMucSP = new FrmDanhMucSP();
+
         Color normalColor = GlobalValues.BackGroundMenu_NonColor;
 
         Color selectedColor = GlobalValues.BackGroundMenu_SelectedColor;
@@ -48,7 +50,8 @@ namespace QLBanHang.Views
             NhaSanXuat,
             NganhHang,
             NhomHang,
-            SanPham
+            SanPham,
+            DanhMucSP
         }
 
         private DisplayFlag _displayFlag = DisplayFlag.NhaSanXuat;
@@ -76,6 +79,7 @@ namespace QLBanHang.Views
             btnNganhHang.BackColor =normalColor;
             btnNhomHang.BackColor = normalColor;
             btnSanPham.BackColor =normalColor;
+            btnDanhMucSP.BackColor = normalColor;
 
             switch(_displayFlag)
             {
@@ -91,7 +95,9 @@ namespace QLBanHang.Views
                 case DisplayFlag.SanPham:
                     btnSanPham.BackColor = selectedColor;
                     break;
-               
+                case DisplayFlag.DanhMucSP:
+                    btnDanhMucSP.BackColor = selectedColor;
+                    break;
             }
         }
 
@@ -107,6 +113,7 @@ namespace QLBanHang.Views
             LoadNganhHangController();
             LoadNhanSanXuatController();
             LoadNhomHangController();
+            LoadDanhMucSPController();
         }
 
         private void LoadNhanSanXuatController()
@@ -138,7 +145,15 @@ namespace QLBanHang.Views
             _FrmSanPham.MdiParent = this;
             _FrmSanPham.Dock = DockStyle.Fill;
             _FrmSanPham.Show();
-            _FrmSanPham.Invalidate();
+        }
+
+        private void LoadDanhMucSPController()
+        {
+            _FrmDanhMucSP = new FrmDanhMucSP();
+
+            _FrmDanhMucSP.MdiParent = this;
+            _FrmDanhMucSP.Dock = DockStyle.Fill;
+            _FrmDanhMucSP.Show();
         }
 
    
@@ -170,6 +185,12 @@ namespace QLBanHang.Views
             DisplayItems();
         }
 
+        private void btnDanhMucSP_Click(object sender, EventArgs e)
+        {
+            _displayFlag = DisplayFlag.DanhMucSP;
+            SetColorButtons();
+            DisplayItems();
+        }
 
         private void DisplayItems()
         {
@@ -187,7 +208,12 @@ namespace QLBanHang.Views
                 case DisplayFlag.SanPham:
                     _FrmSanPham.BringToFront();
                     break;
+                case DisplayFlag.DanhMucSP:
+                    _FrmDanhMucSP.BringToFront();
+                    break;
             }
         }
+
+     
     }
 }
