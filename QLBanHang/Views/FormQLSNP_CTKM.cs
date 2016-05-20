@@ -42,6 +42,7 @@ namespace QLBanHang.Views
             imageList1.TransparentColor = GlobalValues.BackGroundMenu_NonColor;
 
             SetColorButtons();
+            LoadController();
         }
 
 
@@ -103,7 +104,7 @@ namespace QLBanHang.Views
 
         private void FormQLSNP_CTKM_Load(object sender, EventArgs e)
         {
-            LoadController();
+         
             DisplayItems();
         }
 

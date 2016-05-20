@@ -87,11 +87,11 @@ namespace QLBanHang.Views
             ImprovePerfomance.SetDoubleBuffering(this);
             panel1.BackColor = GlobalValues.BackGroundMenu_NonColor;
             CustomButtons();
+            LoadControllers();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadControllers();
             DisplayForm();
         }
 

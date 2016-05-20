@@ -51,7 +51,6 @@ namespace QLBanHang.Views
 
         private void FormQLKH_NCC_Load(object sender, EventArgs e)
         {
-            LoadData();
             DisplayItems();
         }
 

@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLSNP_CTKM));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSanPham = new System.Windows.Forms.Button();
+            this.btnDanhMucSP = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnSanPham = new System.Windows.Forms.Button();
             this.btnNhomHang = new System.Windows.Forms.Button();
             this.btnNganhHang = new System.Windows.Forms.Button();
             this.btnNhaSanXuat = new System.Windows.Forms.Button();
-            this.btnDanhMucSP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,33 @@
             this.panel1.Size = new System.Drawing.Size(214, 742);
             this.panel1.TabIndex = 0;
             // 
+            // btnDanhMucSP
+            // 
+            this.btnDanhMucSP.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDanhMucSP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDanhMucSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhMucSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDanhMucSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDanhMucSP.ImageIndex = 1;
+            this.btnDanhMucSP.ImageList = this.imageList1;
+            this.btnDanhMucSP.Location = new System.Drawing.Point(0, 308);
+            this.btnDanhMucSP.Name = "btnDanhMucSP";
+            this.btnDanhMucSP.Size = new System.Drawing.Size(214, 77);
+            this.btnDanhMucSP.TabIndex = 4;
+            this.btnDanhMucSP.TabStop = false;
+            this.btnDanhMucSP.Text = "DANH MỤC SP";
+            this.btnDanhMucSP.UseVisualStyleBackColor = false;
+            this.btnDanhMucSP.Click += new System.EventHandler(this.btnDanhMucSP_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Turquoise;
+            this.imageList1.Images.SetKeyName(0, "home.png");
+            this.imageList1.Images.SetKeyName(1, "industry.png");
+            this.imageList1.Images.SetKeyName(2, "packing.png");
+            this.imageList1.Images.SetKeyName(3, "526cbb048317d.png");
+            // 
             // btnSanPham
             // 
             this.btnSanPham.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -72,15 +99,6 @@
             this.btnSanPham.Text = "SẢN PHẨM";
             this.btnSanPham.UseVisualStyleBackColor = false;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Turquoise;
-            this.imageList1.Images.SetKeyName(0, "home.png");
-            this.imageList1.Images.SetKeyName(1, "industry.png");
-            this.imageList1.Images.SetKeyName(2, "packing.png");
-            this.imageList1.Images.SetKeyName(3, "526cbb048317d.png");
             // 
             // btnNhomHang
             // 
@@ -137,31 +155,12 @@
             this.btnNhaSanXuat.UseVisualStyleBackColor = false;
             this.btnNhaSanXuat.Click += new System.EventHandler(this.btnNhaSanXuat_Click);
             // 
-            // btnDanhMucSP
-            // 
-            this.btnDanhMucSP.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDanhMucSP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDanhMucSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhMucSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDanhMucSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhMucSP.ImageIndex = 1;
-            this.btnDanhMucSP.ImageList = this.imageList1;
-            this.btnDanhMucSP.Location = new System.Drawing.Point(0, 308);
-            this.btnDanhMucSP.Name = "btnDanhMucSP";
-            this.btnDanhMucSP.Size = new System.Drawing.Size(214, 77);
-            this.btnDanhMucSP.TabIndex = 4;
-            this.btnDanhMucSP.TabStop = false;
-            this.btnDanhMucSP.Text = "DANH MỤC SP";
-            this.btnDanhMucSP.UseVisualStyleBackColor = false;
-            this.btnDanhMucSP.Click += new System.EventHandler(this.btnDanhMucSP_Click);
-            // 
             // FormQLSNP_CTKM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 742);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "FormQLSNP_CTKM";
             this.Text = "FormQLSNP_CTKM";

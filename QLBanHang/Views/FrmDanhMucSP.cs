@@ -49,11 +49,22 @@ namespace QLBanHang.Views
             InitializeComponent();
             _ctrlSanPham.SetView(this);
             _ctrlMaVachSanPham.SetView(this);
+            DoubleBuffering();
+            SetColorStyles();
             LoadSanPham();
             LoadSanPhamCuaHang();
             LoadMaVachSanPham();
         }
+
+        private void DoubleBuffering()
+        {
+            ImprovePerfomance.SetDoubleBuffering(this);
+            ImprovePerfomance.SetDoubleBuffering(dgViewMaVachSanPham);
+            ImprovePerfomance.SetDoubleBuffering(dgViewSanPham);
+            ImprovePerfomance.SetDoubleBuffering(dgViewSanPhamCuaHang);
+        }
         ///
+        /// 
         /// SANPHAM
         ///
         private void LoadSanPham()
@@ -224,6 +235,15 @@ namespace QLBanHang.Views
             var dialogResult = dlg.ShowDialog();
         }
 
-
+        private void SetColorStyles()
+        {
+            this.toolStrip1.BackColor = GlobalValues.GlobalBackGroundColor;
+            this.toolStrip2.BackColor = GlobalValues.GlobalBackGroundColor;
+            this.toolStrip3.BackColor = GlobalValues.GlobalBackGroundColor;
+            this.toolStrip4.BackColor = GlobalValues.GlobalBackGroundColor;
+            this.dgViewMaVachSanPham.BackgroundColor = GlobalValues.GlobalBackGroundColor;
+            this.dgViewSanPham.BackgroundColor = GlobalValues.GlobalBackGroundColor;
+            this.dgViewSanPhamCuaHang.BackgroundColor = GlobalValues.GlobalBackGroundColor;
+        }
     }
 }
