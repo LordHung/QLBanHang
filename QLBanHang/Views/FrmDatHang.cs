@@ -105,7 +105,9 @@ namespace QLBanHang.Views
         {
             ///Load Mã vạch đặt hàng
             ///
+            this.SuspendLayout();
             LoadMaVachDatHang();
+            this.ResumeLayout();
         }
         /// <summary>
         /// 

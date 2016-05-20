@@ -92,7 +92,9 @@ namespace QLBanHang.Views
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             DisplayForm();
+            this.ResumeLayout();
         }
 
 
@@ -245,38 +247,30 @@ namespace QLBanHang.Views
 
         private void DisplayForm()
         {
+            this.SuspendLayout();
             ResetColors();
             switch (_displayFlag)
             {
                 case DisplayFlag.BanHang:
                     _FrmBanHang.BringToFront();
-                    this.Invalidate();
                     break;
                 case DisplayFlag.DatHang:
                     _FrmDatHang.BringToFront();
-                    this.Invalidate();
                     break;
                 case DisplayFlag.ChuyenKho:
                     _FrmChuyenKho.BringToFront();
-                    this.Invalidate();
                     break;
                 case DisplayFlag.NhapKho:
                       _FrmNhapKho.BringToFront();
-                    this.Invalidate();
                     break;
                 case DisplayFlag.XuatKho:
                       _FrmXuatKho.BringToFront();
-                    this.Invalidate();
                     break;
                 case DisplayFlag.ThongKe:
                     _FrmThongKeHoaDon.BringToFront();
-                    this.Invalidate();
-                    break;
-                default:
-                    _FrmBanHang.BringToFront();
-                    this.Invalidate();
                     break;
             }
+            this.ResumeLayout();
         }
 
         private void ResetColors()

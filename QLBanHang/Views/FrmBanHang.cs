@@ -84,9 +84,11 @@ namespace QLBanHang.Views
 
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             LoadControlBanHang();
             LoadMaVachSanPham();
             LoadMaVachSanPhamBanHang();
+            this.ResumeLayout();
         }
         /// <summary>
         /// Load Mã vạch sản phẩm lê dgViewMaVach

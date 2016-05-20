@@ -284,6 +284,7 @@
             this.Controls.Add(this.tSMain);
             this.Name = "Frm_KinhDoanh_Base";
             this.Text = "Frm_KinhDoanh_Base";
+            this.Shown += new System.EventHandler(this.Frm_KinhDoanh_Base_Shown);
             this.tSMaVachDaChon.ResumeLayout(false);
             this.tSMaVachDaChon.PerformLayout();
             this.tSMaVach.ResumeLayout(false);

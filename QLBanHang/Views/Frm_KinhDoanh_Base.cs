@@ -286,5 +286,10 @@ namespace QLBanHang.Views
         {
 
         }
+
+        private void Frm_KinhDoanh_Base_Shown(object sender, EventArgs e)
+        {
+            Application.DoEvents();
+        }
     }
 }
