@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLBanHang.Controls;
 
 namespace QLBanHang.Views
 {
-    public partial class Dlg_Them_Xoa_Sua_base : Form
+    public partial class FrmTaoPQT_PDD_Base : Form
     {
-        public Dlg_Them_Xoa_Sua_base()
+        public FrmTaoPQT_PDD_Base()
         {
             InitializeComponent();
-            this.BackColor = GlobalValues.GlobalBackGroundColor;
+        }
+
+        private void dgView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            tsLblSoLuong.Text = (dgView.Rows.Count - 1).ToString() + " phiếu.";
         }
     }
 }

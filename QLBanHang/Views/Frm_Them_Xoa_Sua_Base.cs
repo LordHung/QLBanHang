@@ -114,6 +114,11 @@ namespace QLBanHang.Views
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
+        private void dgView_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

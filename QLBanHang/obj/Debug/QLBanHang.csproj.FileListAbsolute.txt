@@ -260,3 +260,7 @@ C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.Update
 C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddMaVachSanPhamDlg.resources
 C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.DlgMaVachSanPhamBse.resources
 C:\Users\_L_\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.UpdateMaVachSanPhamDlg.resources
+C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.AddPhieuQuaTangDlg.resources
+C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmQLPQT.resources
+C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmTaoPhieuQuaTang.resources
+C:\Users\L\Documents\GitHub\QLBanHang\QLBanHang\obj\Debug\QLBanHang.Views.FrmTaoPQT_PDD_Base.resources

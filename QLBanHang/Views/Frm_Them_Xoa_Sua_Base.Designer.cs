@@ -117,6 +117,7 @@
             this.dgView.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgView_CellValueNeeded);
             this.dgView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgView_DataBindingComplete);
             this.dgView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgView_RowPostPaint);
+            this.dgView.SelectionChanged += new System.EventHandler(this.dgView_SelectionChanged);
             // 
             // Frm_Them_Xoa_Sua_Base
             // 

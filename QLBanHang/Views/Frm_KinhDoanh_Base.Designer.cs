@@ -78,7 +78,7 @@
             this.tSbtnMinusMaVach});
             this.tSMaVachDaChon.Location = new System.Drawing.Point(0, 0);
             this.tSMaVachDaChon.Name = "tSMaVachDaChon";
-            this.tSMaVachDaChon.Size = new System.Drawing.Size(712, 25);
+            this.tSMaVachDaChon.Size = new System.Drawing.Size(708, 25);
             this.tSMaVachDaChon.TabIndex = 0;
             this.tSMaVachDaChon.Text = "toolStrip2";
             // 
@@ -133,6 +133,7 @@
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.splitContainer1.Size = new System.Drawing.Size(1215, 399);
             this.splitContainer1.SplitterDistance = 499;
+            this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 29;
             // 
             // dgViewMaVach
@@ -178,7 +179,7 @@
             this.dgViewMaVachDaChon.Name = "dgViewMaVachDaChon";
             this.dgViewMaVachDaChon.ReadOnly = true;
             this.dgViewMaVachDaChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgViewMaVachDaChon.Size = new System.Drawing.Size(712, 349);
+            this.dgViewMaVachDaChon.Size = new System.Drawing.Size(708, 349);
             this.dgViewMaVachDaChon.TabIndex = 6;
             this.dgViewMaVachDaChon.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgViewMaVachDaChon_CellValueNeeded);
             this.dgViewMaVachDaChon.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgViewMaVachDaChon_DataBindingComplete);
@@ -193,7 +194,7 @@
             this.lblSoLuongMaVachDuocChon});
             this.tsSoLuongSanPhamDuocChon.Location = new System.Drawing.Point(0, 374);
             this.tsSoLuongSanPhamDuocChon.Name = "tsSoLuongSanPhamDuocChon";
-            this.tsSoLuongSanPhamDuocChon.Size = new System.Drawing.Size(712, 25);
+            this.tsSoLuongSanPhamDuocChon.Size = new System.Drawing.Size(708, 25);
             this.tsSoLuongSanPhamDuocChon.TabIndex = 5;
             this.tsSoLuongSanPhamDuocChon.Text = "toolStrip1";
             // 

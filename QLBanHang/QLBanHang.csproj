@@ -69,6 +69,7 @@
     <Compile Include="Controls\ctrlPhanQuyen.cs" />
     <Compile Include="Controls\ctrlPhieuChi.cs" />
     <Compile Include="Controls\ctrlPhieuNhap.cs" />
+    <Compile Include="Controls\ctrlPhieuQuaTang.cs" />
     <Compile Include="Controls\ctrlPhieuThu.cs" />
     <Compile Include="Controls\ctrlPhieuXuat.cs" />
     <Compile Include="Controls\ctrlQuyen.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Models\mdlPhanQuyen.cs" />
     <Compile Include="Models\mdlPhieuChi.cs" />
     <Compile Include="Models\mdlPhieuNhap.cs" />
+    <Compile Include="Models\mdlPhieuQuaTang.cs" />
     <Compile Include="Models\mdlPhieuThu.cs" />
     <Compile Include="Models\mdlPhieuXuat.cs" />
     <Compile Include="Models\mdlQuyen.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Objects\clsPhanQuyen.cs" />
     <Compile Include="Objects\clsPhieuChi.cs" />
     <Compile Include="Objects\clsPhieuNhap.cs" />
+    <Compile Include="Objects\clsPhieuQuaTang.cs" />
     <Compile Include="Objects\clsPhieuThu.cs" />
     <Compile Include="Objects\clsPhieuXuat.cs" />
     <Compile Include="Objects\clsQuyen.cs" />
@@ -162,6 +165,12 @@
     </Compile>
     <Compile Include="Views\AddMaVachSanPhamDlg.Designer.cs">
       <DependentUpon>AddMaVachSanPhamDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPhieuQuaTangDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddPhieuQuaTangDlg.Designer.cs">
+      <DependentUpon>AddPhieuQuaTangDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\DlgMaVachSanPhamBse.cs">
       <SubType>Form</SubType>
@@ -228,6 +237,12 @@
     </Compile>
     <Compile Include="Views\Dlg_Them_Xoa_Sua_base.Designer.cs">
       <DependentUpon>Dlg_Them_Xoa_Sua_base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmQLPQT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmQLPQT.Designer.cs">
+      <DependentUpon>FrmQLPQT.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmDanhMucSP.cs">
       <SubType>Form</SubType>
@@ -306,6 +321,18 @@
     </Compile>
     <Compile Include="Views\FrmSanPham.Designer.cs">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmTaoPhieuQuaTang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmTaoPhieuQuaTang.Designer.cs">
+      <DependentUpon>FrmTaoPhieuQuaTang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmTaoPQT_PDD_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmTaoPQT_PDD_Base.Designer.cs">
+      <DependentUpon>FrmTaoPQT_PDD_Base.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Frm_KinhDoanh_Base.cs">
       <SubType>Form</SubType>
@@ -513,6 +540,9 @@
     <EmbeddedResource Include="Views\AddMaVachSanPhamDlg.resx">
       <DependentUpon>AddMaVachSanPhamDlg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddPhieuQuaTangDlg.resx">
+      <DependentUpon>AddPhieuQuaTangDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DlgMaVachSanPhamBse.resx">
       <DependentUpon>DlgMaVachSanPhamBse.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dlg_Them_Xoa_Sua_base.resx">
       <DependentUpon>Dlg_Them_Xoa_Sua_base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmQLPQT.resx">
+      <DependentUpon>FrmQLPQT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmDanhMucSP.resx">
       <DependentUpon>FrmDanhMucSP.cs</DependentUpon>
@@ -584,6 +617,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmTaoPhieuQuaTang.resx">
+      <DependentUpon>FrmTaoPhieuQuaTang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmTaoPQT_PDD_Base.resx">
+      <DependentUpon>FrmTaoPQT_PDD_Base.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_KinhDoanh_Base.resx">
       <DependentUpon>Frm_KinhDoanh_Base.cs</DependentUpon>

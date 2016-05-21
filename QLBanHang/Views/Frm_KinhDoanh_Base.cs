@@ -19,8 +19,6 @@ namespace QLBanHang.Views
             DoubleBuffering();
             SetColor();
             LoadCuaHang();
-            LoadSoLuongMaVach();
-
         }
 
         protected void DoubleBuffering()
@@ -228,6 +226,7 @@ namespace QLBanHang.Views
             dgViewMaVach.Columns["GiaBan"].DefaultCellStyle.ForeColor = Color.Green;
             dgViewMaVach.Columns["GiaBan"].Width = 100;
 
+            LoadSoLuongMaVach();
             //Dùng cho từng Form riêng biệt
             UpdateCustomDataGridView();
 
@@ -269,7 +268,7 @@ namespace QLBanHang.Views
 
         protected void LoadSoLuongMaVach()
         {
-            lblSoLuongMaVach.Text = dgViewMaVach.Rows.Count.ToString() + " sản phẩm.";
+            lblSoLuongMaVach.Text = (dgViewMaVach.Rows.Count - 1).ToString() + " sản phẩm.";
         }
 
         private void dgViewMaVachDaChon_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
