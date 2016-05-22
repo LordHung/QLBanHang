@@ -164,6 +164,7 @@
             this.IsMdiContainer = true;
             this.Name = "FormQLSNP_CTKM";
             this.Text = "FormQLSNP_CTKM";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormQLSNP_CTKM_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

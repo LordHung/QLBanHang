@@ -66,6 +66,23 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtMaVach);
+            this.panel1.Size = new System.Drawing.Size(325, 792);
+            this.panel1.Controls.SetChildIndex(this.txtMaVach, 0);
+            this.panel1.Controls.SetChildIndex(this.label1, 0);
+            this.panel1.Controls.SetChildIndex(this.label2, 0);
+            this.panel1.Controls.SetChildIndex(this.label3, 0);
+            this.panel1.Controls.SetChildIndex(this.label4, 0);
+            this.panel1.Controls.SetChildIndex(this.label5, 0);
+            this.panel1.Controls.SetChildIndex(this.label6, 0);
+            this.panel1.Controls.SetChildIndex(this.label7, 0);
+            this.panel1.Controls.SetChildIndex(this.txtMoTa, 0);
+            this.panel1.Controls.SetChildIndex(this.dtpHSD, 0);
+            this.panel1.Controls.SetChildIndex(this.numTriGia, 0);
+            this.panel1.Controls.SetChildIndex(this.cmbKhachHang, 0);
+            this.panel1.Controls.SetChildIndex(this.ckPhieuDoiDiem, 0);
+            this.panel1.Controls.SetChildIndex(this.ckPhieuQuaTang, 0);
+            this.panel1.Controls.SetChildIndex(this.dtpNgayTao, 0);
+            this.panel1.Controls.SetChildIndex(this.dtpNgaySD, 0);
             // 
             // txtMaVach
             // 
@@ -226,6 +243,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Name = "FrmQLPQT";
             this.Text = "FormQLPQT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmQLPQT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

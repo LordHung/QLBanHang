@@ -63,7 +63,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(1172, 654);
-            this.splitContainer1.SplitterDistance = 272;
             // 
             // btnAdd
             // 

@@ -322,6 +322,12 @@
     <Compile Include="Views\FrmSanPham.Designer.cs">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmTaoPhieuDoiDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmTaoPhieuDoiDiem.Designer.cs">
+      <DependentUpon>FrmTaoPhieuDoiDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmTaoPhieuQuaTang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,12 @@
     </Compile>
     <Compile Include="Views\FrmTaoPQT_PDD_Base.Designer.cs">
       <DependentUpon>FrmTaoPQT_PDD_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmThongKePhieuQuaTang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmThongKePhieuQuaTang.Designer.cs">
+      <DependentUpon>FrmThongKePhieuQuaTang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Frm_KinhDoanh_Base.cs">
       <SubType>Form</SubType>
@@ -618,11 +630,17 @@
     <EmbeddedResource Include="Views\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmTaoPhieuDoiDiem.resx">
+      <DependentUpon>FrmTaoPhieuDoiDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmTaoPhieuQuaTang.resx">
       <DependentUpon>FrmTaoPhieuQuaTang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmTaoPQT_PDD_Base.resx">
       <DependentUpon>FrmTaoPQT_PDD_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmThongKePhieuQuaTang.resx">
+      <DependentUpon>FrmThongKePhieuQuaTang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Frm_KinhDoanh_Base.resx">
       <DependentUpon>Frm_KinhDoanh_Base.cs</DependentUpon>

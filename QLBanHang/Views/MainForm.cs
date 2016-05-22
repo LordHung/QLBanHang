@@ -67,6 +67,13 @@ namespace QLBanHang.Views
         //Chuyển kho
         FrmChuyenKho _FrmChuyenKho = new FrmChuyenKho();
 
+        //Tạo phiếu quà tặng
+        FrmTaoPhieuQuaTang _FrmTaoPhieuQuaTang;
+        //Thống kê phiếu quà tăngk
+        FrmThongKePhieuQuaTang _FrmThongKePhieuQuaTang;
+        //Quản lý phiếu quà tặng
+        FrmQLPQT _FrmQLPQT;
+
         enum DisplayFlag
         {
             BanHang,
@@ -199,6 +206,25 @@ namespace QLBanHang.Views
             _FrmQLNV_PQ = new FormQLNV_PQ();
             _FrmQLNV_PQ.Show();
         }
+
+        private void tạoPhiếuQuàTặngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _FrmTaoPhieuQuaTang = new FrmTaoPhieuQuaTang();
+            _FrmTaoPhieuQuaTang.Show();
+        }
+
+        private void quảnLýPhiếuQuàTặngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _FrmQLPQT = new FrmQLPQT();
+            _FrmQLPQT.Show();
+        }
+
+        private void thốngKêPhiếuQuàTặngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _FrmThongKePhieuQuaTang = new FrmThongKePhieuQuaTang();
+            _FrmThongKePhieuQuaTang.Show();
+        }
+    
       
         #endregion
 
@@ -347,10 +373,6 @@ namespace QLBanHang.Views
             btnChuyenKho.FlatAppearance.BorderSize = 0;
         }
 
-      
-
-    
-
-    
+   
     }
 }

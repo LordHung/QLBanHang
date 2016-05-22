@@ -45,6 +45,28 @@ namespace QLBanHang.Controls
             return _mdlPhieuQuaTang.GenerateNewSoPhieu(date.ToString("yyyy - MM - dd"));
         }
         /// <summary>
+        /// Thống kê dữ liệu
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <param name="_theoNgayTao"></param>
+        /// <param name="chuaSD"></param>
+        /// <param name="daSD"></param>
+        /// <param name="_theoPhieuQuaTang"></param>
+        /// <param name="_theoPhieuDoiDiem"></param>
+        /// <param name="_idKhachHang"></param>
+        /// <returns></returns>
+        public DataTable ThongKeDuLieu(DateTime fromDate, DateTime toDate//Từ ngày đến ngày
+           , bool _theoNgayTao = false //Thoeo ngày tạo hoặc ngày hết hạn
+           , bool chuaSD = false, bool daSD = false//đã sử dụng hay chưa
+           , bool _theoPhieuQuaTang = false, bool _theoPhieuDoiDiem = false//Theo phiếu quà tặng hay đổi điểm
+           , int _idKhachHang = 0 //idKhachHang
+           )
+        {
+            return _mdlPhieuQuaTang.ThongKeDuLieu(fromDate,toDate,_theoNgayTao,chuaSD,daSD
+                ,_theoPhieuQuaTang,_theoPhieuDoiDiem,_idKhachHang);
+        }
+        /// <summary>
         /// Tạo số phiếu tại thời điểm hiện tại
         /// </summary>
         /// <returns></returns>

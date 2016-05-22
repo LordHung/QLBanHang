@@ -26,6 +26,7 @@ namespace QLBanHang.Views
         {
             InitializeComponent();
             _ctrlPhieuQuaTang.SetView(this);
+            dtpHSD.Value = dtpHSD.Value.AddMonths(8);
         }
 
 

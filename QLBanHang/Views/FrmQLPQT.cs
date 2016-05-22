@@ -265,8 +265,19 @@ namespace QLBanHang.Views
 
         protected override void dgView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs ex)
         {
+
+            lblSoLuong.Text = (dgView.Rows.Count - 1).ToString() + " phiếu.";
             dgView.Columns["id"].Visible = false;
+            dgView.Columns["HanSuDung"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            dgView.Columns["MaVach"].HeaderText = "Mã vạch";
+            dgView.Columns["TriGia"].HeaderText = "Trị Giá";
             dgView.Columns["SoPhieu"].Visible = false;
+            dgView.Columns["NgayTao"].HeaderText = "Ngày tạo";
+            dgView.Columns["NgaySuDung"].HeaderText = "Ngày sử dụng";
+            dgView.Columns["NgaySuDung"].Width = 150;
+            dgView.Columns["HanSuDung"].HeaderText = "HSD";
+            dgView.Columns["GhiChu"].HeaderText = "Ghi chú";
 
             txtMaVach.Text = dgView.Rows[0].Cells[2].Value.ToString().Trim();
             if (dgView.Rows[0].Cells[7].Value.ToString().Trim().Length > 0)

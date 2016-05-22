@@ -51,7 +51,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgView);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(1157, 694);
-            this.splitContainer1.SplitterDistance = 269;
+            this.splitContainer1.SplitterDistance = 200;
+            this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 1;
             // 
             // dgView
@@ -62,7 +63,7 @@
             this.dgView.Name = "dgView";
             this.dgView.ReadOnly = true;
             this.dgView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgView.Size = new System.Drawing.Size(884, 669);
+            this.dgView.Size = new System.Drawing.Size(949, 669);
             this.dgView.TabIndex = 1;
             this.dgView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgView_DataBindingComplete);
             // 
@@ -73,7 +74,7 @@
             this.tsLblSoLuong});
             this.toolStrip1.Location = new System.Drawing.Point(0, 669);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(949, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -91,6 +92,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmTaoPQT_PDD_Base";
             this.Text = "FrmTaoPQT_PDD_Base";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

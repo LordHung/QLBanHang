@@ -21,7 +21,8 @@ namespace QLBanHang
             //MainForm main = new MainForm();
             //LoadingForm.CloseForm();
             //Application.Run(main);
-            Application.Run(new FrmQLPQT());
+            Application.Run(new MainForm());
+            //Application.Run(new FrmThongKeHoaDon());
             //Application.Run(new MainForm());
 
         }

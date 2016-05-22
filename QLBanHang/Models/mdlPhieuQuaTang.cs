@@ -44,6 +44,59 @@ namespace QLBanHang.Models
             return table;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <param name="_theoNgayTao"></param>
+        /// <param name="_theoHSD"></param>
+        /// <param name="SD"></param>
+        /// <param name="_theoPhieuQuaTang"></param>
+        /// <param name="_theoPhieuDoiDiem"></param>
+        /// <param name="_idKhachHang"></param>
+        /// <returns></returns>
+        public DataTable ThongKeDuLieu(DateTime fromDate,DateTime toDate//Từ ngày đến ngày
+            ,bool _theoNgayTao = false //Thoeo ngày tạo hoặc ngày hết hạn
+            ,bool chuaSD = false,bool daSD = false//đã sử dụng hay chưa
+            ,bool _theoPhieuQuaTang = false,bool _theoPhieuDoiDiem = false//Theo phiếu quà tặng hay đổi điểm
+            ,int _idKhachHang = 0 //idKhachHang
+            )
+            {
+                string ThongKeTheoTheoLoaiNgay = String.Format(" '{0}'  < {2} and {2} < '{1}'  {3}"
+                 , fromDate.ToString("yyyy-MM-dd")
+                 , toDate.ToString("yyyy-MM-dd")
+                 , (_theoNgayTao) ? " NgayTao " : " HanSuDung "
+                 , (chuaSD) ? " and NgaySuDung is null " : " ");
+
+                string ThongKeTheoDaSuDungTrongKhoangNgay 
+                    = String.Format(" '{0}'  < NgaySuDung and NgaySuDung < '{1}'"
+                    +" and NgaySuDung is not null "
+                    , fromDate.ToString("yyyy-MM-dd")
+                    , toDate.ToString("yyyy-MM-dd"));
+                
+                string TheoPhieuQuaTangHayDoiDiem
+                    = String.Format(" and {0} "
+                    ,(_theoPhieuQuaTang) ? " idKhachHang is null " : " idKhachHang is not null ");
+
+                string TheoKhachHang
+                    = String.Format(" {0} " 
+                    ,(_idKhachHang != 0) ?  " and idKhachHang = " +"'" +_idKhachHang +"'" : ""
+                    );
+
+                DataTable table = new DataTable();//Create template table to get data from database
+                _conn.CMD.CommandText = String.Format(
+                "select distinct tbPhieuQuaTang.id, REPLACE(STR(MaVach, 4), SPACE(1), '0') + CONVERT(nvarchar(8),FORMAT(NgayTao,'MMyyyy')) as MaVach"
+                 + ",MaVach as SoPhieu,TriGia,NgayTao,NgaySuDung,GhiChu,idKhachHang,HanSuDung "
+                 + "from tbPhieuQuaTang,tbKhachHang "
+                 + "where {0}  {1}  {2}"
+                 + " order by SoPhieu desc"
+                 , (!daSD) ? ThongKeTheoTheoLoaiNgay : ThongKeTheoDaSuDungTrongKhoangNgay
+                 , (_theoPhieuQuaTang && _theoPhieuDoiDiem) ? " " : TheoPhieuQuaTangHayDoiDiem
+                 , TheoKhachHang);
+                _conn.FillData(table);
+                return table;
+            }
+        /// <summary>
         /// THêm dữ liệu vào databse 
         /// </summary>
         /// <param name="phieuQuaTang"></param>
