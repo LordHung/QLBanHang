@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,14 +63,28 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(359, 800);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(359, 747);
+            this.panel1.Controls.SetChildIndex(this.label1, 0);
+            this.panel1.Controls.SetChildIndex(this.label2, 0);
+            this.panel1.Controls.SetChildIndex(this.label3, 0);
+            this.panel1.Controls.SetChildIndex(this.label4, 0);
+            this.panel1.Controls.SetChildIndex(this.label5, 0);
+            this.panel1.Controls.SetChildIndex(this.label6, 0);
+            this.panel1.Controls.SetChildIndex(this.label7, 0);
+            this.panel1.Controls.SetChildIndex(this.cmbCuaHang, 0);
+            this.panel1.Controls.SetChildIndex(this.txtTenDangNhap, 0);
+            this.panel1.Controls.SetChildIndex(this.txtMatKhau, 0);
+            this.panel1.Controls.SetChildIndex(this.txtHoTen, 0);
+            this.panel1.Controls.SetChildIndex(this.txtChucVu, 0);
+            this.panel1.Controls.SetChildIndex(this.ckToanQuyen, 0);
+            this.panel1.Controls.SetChildIndex(this.ckValid, 0);
             // 
             // ckValid
             // 
             this.ckValid.AutoSize = true;
             this.ckValid.Location = new System.Drawing.Point(160, 361);
-            this.ckValid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckValid.Margin = new System.Windows.Forms.Padding(4);
             this.ckValid.Name = "ckValid";
             this.ckValid.Size = new System.Drawing.Size(58, 20);
             this.ckValid.TabIndex = 27;
@@ -80,7 +95,7 @@
             // 
             this.ckToanQuyen.AutoSize = true;
             this.ckToanQuyen.Location = new System.Drawing.Point(160, 306);
-            this.ckToanQuyen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckToanQuyen.Margin = new System.Windows.Forms.Padding(4);
             this.ckToanQuyen.Name = "ckToanQuyen";
             this.ckToanQuyen.Size = new System.Drawing.Size(164, 20);
             this.ckToanQuyen.TabIndex = 26;
@@ -90,7 +105,7 @@
             // txtChucVu
             // 
             this.txtChucVu.Location = new System.Drawing.Point(114, 238);
-            this.txtChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(229, 22);
             this.txtChucVu.TabIndex = 25;
@@ -98,7 +113,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(114, 172);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(229, 22);
             this.txtHoTen.TabIndex = 24;
@@ -106,7 +121,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(114, 117);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(229, 22);
@@ -115,7 +130,7 @@
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(114, 64);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(229, 22);
             this.txtTenDangNhap.TabIndex = 22;
@@ -126,7 +141,7 @@
             this.cmbCuaHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCuaHang.FormattingEnabled = true;
             this.cmbCuaHang.Location = new System.Drawing.Point(114, 21);
-            this.cmbCuaHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCuaHang.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCuaHang.Name = "cmbCuaHang";
             this.cmbCuaHang.Size = new System.Drawing.Size(229, 24);
             this.cmbCuaHang.TabIndex = 21;
@@ -202,14 +217,27 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Cửa hàng*";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(230, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1441, 825);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmNhanVien";
             this.Text = "FrmNhanVien";
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -233,5 +261,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,13 +51,21 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(400, 792);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(400, 722);
+            this.panel1.Controls.SetChildIndex(this.label1, 0);
+            this.panel1.Controls.SetChildIndex(this.label2, 0);
+            this.panel1.Controls.SetChildIndex(this.label3, 0);
+            this.panel1.Controls.SetChildIndex(this.label4, 0);
+            this.panel1.Controls.SetChildIndex(this.txtMaNSX, 0);
+            this.panel1.Controls.SetChildIndex(this.txtTenNSX, 0);
+            this.panel1.Controls.SetChildIndex(this.txtDiaChi, 0);
+            this.panel1.Controls.SetChildIndex(this.txtGhiChu, 0);
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(107, 190);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(5);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(239, 93);
@@ -65,7 +74,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(106, 123);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(5);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(239, 53);
@@ -74,7 +83,7 @@
             // txtTenNSX
             // 
             this.txtTenNSX.Location = new System.Drawing.Point(106, 75);
-            this.txtTenNSX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTenNSX.Margin = new System.Windows.Forms.Padding(5);
             this.txtTenNSX.Name = "txtTenNSX";
             this.txtTenNSX.Size = new System.Drawing.Size(239, 22);
             this.txtTenNSX.TabIndex = 13;
@@ -82,7 +91,7 @@
             // txtMaNSX
             // 
             this.txtMaNSX.Location = new System.Drawing.Point(104, 28);
-            this.txtMaNSX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtMaNSX.Margin = new System.Windows.Forms.Padding(5);
             this.txtMaNSX.Name = "txtMaNSX";
             this.txtMaNSX.Size = new System.Drawing.Size(239, 22);
             this.txtMaNSX.TabIndex = 12;
@@ -127,15 +136,28 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Mã";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(216, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmNhaSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1453, 817);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmNhaSanXuat";
             this.Text = "FrmNhaSanXuat";
             this.Load += new System.EventHandler(this.FrmNhaSanXuat_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -153,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

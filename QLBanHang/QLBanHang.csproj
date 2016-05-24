@@ -32,9 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -142,6 +145,35 @@
     <Compile Include="Objects\clsSanPham.cs" />
     <Compile Include="Objects\clsThuNoKhachHang.cs" />
     <Compile Include="Objects\clsTraNoNhaCungCap.cs" />
+    <Compile Include="QL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachLoaiSP.Designer.cs">
+      <DependentUpon>rptDanhSachLoaiSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNganhSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNganhSP.Designer.cs">
+      <DependentUpon>rptDanhSachNganhSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNSX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNSX.Designer.cs">
+      <DependentUpon>rptDanhSachNSX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanhSachNV.Designer.cs">
+      <DependentUpon>rptDanhSachNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddCuaHangDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -540,6 +572,22 @@
     <Compile Include="Views\UpdatePhieuThuDlg.Designer.cs">
       <DependentUpon>UpdatePhieuThuDlg.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\rptDanhSachLoaiSP.resx">
+      <DependentUpon>rptDanhSachLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachNganhSanPham.rdlc" />
+    <EmbeddedResource Include="Reports\rptDanhSachNganhSP.resx">
+      <DependentUpon>rptDanhSachNganhSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachNhanVien.rdlc" />
+    <EmbeddedResource Include="Reports\rptDanhSachNhaSanXuat.rdlc" />
+    <EmbeddedResource Include="Reports\rptDanhSachNSX.resx">
+      <DependentUpon>rptDanhSachNSX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanhSachNV.resx">
+      <DependentUpon>rptDanhSachNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHoaDon80mmTheKhachHang.rdlc" />
     <EmbeddedResource Include="Views\AddCuaHangDlg.resx">
       <DependentUpon>AddCuaHangDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -798,6 +846,17 @@
     <None Include="images\save.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QL.xsc">
+      <DependentUpon>QL.xsd</DependentUpon>
+    </None>
+    <None Include="QL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL.xss">
+      <DependentUpon>QL.xsd</DependentUpon>
+    </None>
     <None Include="Resources\applications_system.png" />
   </ItemGroup>
   <ItemGroup>

@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using QLBanHang.Controls;
 using QLBanHang.Objects;
 using QLBanHang.Views;
-
+using QLBanHang.Reports;
 
 namespace QLBanHang.Views
 {
     public partial class FrmNhanVien : Frm_Them_Xoa_Sua_Base,INhanVienView
     {
+        rptDanhSachNV _rptDanhSachNV = new rptDanhSachNV();
+
         ctrlNhanVien _ctrlNhanVien = new ctrlNhanVien();
 
         clsNhanVien _nhanVien = new clsNhanVien();
@@ -233,6 +235,9 @@ namespace QLBanHang.Views
         {
             dgView.Columns["id"].Visible = false;
         }
-    
+
+        private void button1_Click(object sender, EventArgs e) {
+            _rptDanhSachNV.Show();
+        }
     }
 }
